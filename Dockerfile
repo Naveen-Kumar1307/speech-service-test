@@ -18,7 +18,7 @@ RUN dism /online /enable-feature /all /featurename:IIS-Security /NoRestart \
     && dism /online /enable-feature /all /featurename:IIS-HttpCompressionStatic /NoRestart
 
 # Copy website content
-COPY ./site /inetpub/wwwroot/
+COPY . /inetpub/wwwroot/
 
 # Expose HTTP port
 EXPOSE 80
