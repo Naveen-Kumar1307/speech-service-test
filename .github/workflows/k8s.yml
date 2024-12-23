@@ -23,7 +23,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMSAGE_VERSION }} .
+        docker build -t ${{ env.IMAGE_NAME }}:${{ github.run_number }} .
 
     - name: Push Docker image to Docker Hub
       run: |
