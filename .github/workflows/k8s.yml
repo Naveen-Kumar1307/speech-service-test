@@ -9,7 +9,7 @@ jobs:
   build-and-push:
     runs-on: windows-latest
     env:
-      IMAGE_NAME: dominicpeters95/trainer-hub
+      IMAGE_NAME: parthibanlearnship/speech-service
 
     steps:
     - name: Checkout code
