@@ -1,0 +1,5 @@
+package.CreationDirectory	voice-mail
+package.ID			NUANCE,EduSpeak2_RAPI(2.16.01.0001),1100,529
+package.NLDefined		TRUE
+package.NumGrammars		1
+package.GrammarName0		.SENTENCE

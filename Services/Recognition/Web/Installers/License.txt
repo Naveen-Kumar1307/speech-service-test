@@ -1,0 +1,17 @@
+New Relic install command:
+
+	msiexec /i NewRelicServerMonitor_"version".msi /L*v install.log /qn NR_LICENSE_KEY="your_license_key"
+
+MSI: 
+	"NewRelicServerMonitor_x64_3.1.17.0.msi"
+
+Key: 
+	"ded53620f3c7e62598dfaddc6553c4c2589872b0"	
+
+Example:
+
+	msiexec /i NewRelicServerMonitor_x64_3.1.17.0.msi /L*v install.log /qn NR_LICENSE_KEY=ded53620f3c7e62598dfaddc6553c4c2589872b0
+
+Note:
+
+	Computer must be restarted afterwards to work.

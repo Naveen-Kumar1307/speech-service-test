@@ -1,0 +1,9 @@
+Observation_method			mixt
+Front_end_control 			${NUANCE}/data/master_packages/english-p8/fe.control
+Log_base 				1.0001
+Sum_probs 				1
+Grand_variance 				0 	0.0
+Feature_number 				1
+frame_single_feature			100	1.0 	10000
+Shortlist                               ${NUANCE}/data/master_packages/english-p8/models.shortlist
+Gaussian_weight				0.7

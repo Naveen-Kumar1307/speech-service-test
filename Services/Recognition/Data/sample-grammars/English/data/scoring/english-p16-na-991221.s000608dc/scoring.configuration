@@ -1,0 +1,31 @@
+# Scoring:
+Scoring.Tree		${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/tree
+Scoring.Attributes	${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/attr
+
+Scoring.Duration.Tree		${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/tree-duration
+Scoring.Duration.Attributes	${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/attr-duration
+
+Scoring.Combine.Tree		${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/tree-combine
+Scoring.Combine.Attributes	${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/attr-combine
+
+Scoring.Threshold	3
+Scoring.Smoothing	TRUE
+Scoring.TreeMapping	optimum
+Scoring.NumPhones	2.5
+
+Scoring.Duration.Threshold	3
+Scoring.Duration.TreeMapping	optimum
+Scoring.Duration.NumPhones	2.5
+Scoring.Combine.Threshold	3
+Scoring.Combine.TreeMapping	optimum
+Scoring.Combine.NumPhones	2.5
+
+scoring.ThresholdsFile  ${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/thresholds
+scoring.PercentFA	10 
+scoring.MappingFile	${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/phoneme_grapheme_map
+scoring.BoundaryFile    ${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/phn_dist_boundary
+
+scoring.StatsFile       ${NUANCE}/data/scoring/english-p16-na-991221.s000608dc/duration_stats
+scoring.StatsType  Abs
+
+Scoring.Debug	   TRUE

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ASR package" default="build.dev.then.test" basedir=".">
+
+  <if test="${not property::exists('local.folders')}">
+    <property name="local.folders" value="builder.folders" />
+    <echo message="WARNING! local.folders was not set, using default local.folders=${local.folders}" />
+  </if>
+
+  <if test="${not property::exists('deploy.packages')}">
+    <property name="deploy.packages" value="false" />
+    <echo message="WARNING! deploy.packages was not set, using default deploy.packages=${deploy.packages}" />
+  </if>
+
+  <include buildfile="${local.folders}.properties" />
+  
+  <property name="artifacts.folder" value="${path::combine(path::get-directory-name(source.folder),'artifacts')}" />
+  
+  <property name="web.folder" value="${artifacts.folder}\Web" />
+  <property name="prod.folder" value="${artifacts.folder}\Cloud.Prod" />
+  <property name="stage.folder" value="${artifacts.folder}\Cloud.Stage" />
+  <property name="sandbox.folder" value="${artifacts.folder}\Cloud.Sandbox" />
+
+  <property name="build.results.folder" value="${source.folder}\Services\Recognition\Web" />
+  <property name="package.results.folder" value="${source.folder}\Services\Recognition\Package\bin\Release\app.publish" />
+
+  <target name="build.dev.then.test" 
+          depends="build.dev.targets,build.test.targets" />
+
+  <target name="build.dev.targets">
+    <nant target="build" buildfile="asr.targets.build">
+      <properties>
+        <property name="target" value="Dev" />
+      </properties>
+    </nant>
+    
+    <call target="copy.web" cascade="false" />
+    
+    <property name="version.file" value="DevMajorBuildVer.txt" />
+    <call target="generate.version" cascade="false" />
+
+    <property name="artifact.folder" value="${web.folder}" />
+    <property name="build.archive.folder" value="${archives.folder}\Dev\Major\ASR\${version.name}\Web" />
+    <call target="archive.artifacts" cascade="false" />
+
+    <property name="service.machine" value="hqge2asr-d" />
+    <call target="deploy.artifacts" cascade="false" if="${deploy.packages}" />
+  </target>
+
+  <target name="build.test.targets">
+    <nant target="build" buildfile="asr.targets.build">
+      <properties>
+        <property name="target" value="Test" />
+      </properties>
+    </nant>
+
+    <call target="copy.web" cascade="false" />
+
+    <property name="version.file" value="TestMajorBuildVer.txt" />
+    <call target="generate.version" cascade="false" />
+
+    <property name="artifact.folder" value="${web.folder}" />
+    <property name="build.archive.folder" value="${archives.folder}\ASR\${version.name}\Test\Web" />
+    <call target="archive.artifacts" cascade="false" />
+
+    <property name="service.machine" value="hqge2asr-t1" />
+    <call target="deploy.artifacts" cascade="false" if="${deploy.packages}" />
+
+    <property name="service.machine" value="hqge2asr-t2" />
+    <call target="deploy.artifacts" cascade="false" if="${deploy.packages}" />
+
+    <property name="target.name" value="Sandbox" />
+    <property name="package.folder" value="${sandbox.folder}" />
+    <call target="archive.package" cascade="false" />
+
+    <property name="target.name" value="Stage" />
+    <property name="package.folder" value="${stage.folder}" />
+    <call target="archive.package" cascade="false" />
+
+    <property name="target.name" value="Prod" />
+    <property name="package.folder" value="${prod.folder}" />
+    <call target="archive.package" cascade="false" />
+  </target>
+
+  <target name="archive.package">
+    <nant target="build" buildfile="asr.targets.build">
+      <properties>
+        <property name="target" value="${target.name}" />
+      </properties>
+    </nant>
+
+    <call target="copy.package" cascade="false" />
+
+    <property name="artifact.folder" value="${package.folder}" />
+    <property name="build.archive.folder" value="${archives.folder}\ASR\${version.name}\${target.name}" />
+    <call target="archive.artifacts" cascade="false" />
+  </target>
+
+  <target name="clean.folder">
+    <delete>
+      <fileset>
+        <include name="${clean.folder.path}\**\*" />
+      </fileset>
+    </delete>
+    
+    <delete dir="${clean.folder.path}" />
+    <mkdir dir="${clean.folder.path}" if="${not directory::exists(clean.folder.path)}" />
+  </target>
+
+  <target name="copy.web">
+    <property name="clean.folder.path" value="${web.folder}" />
+    <call target="clean.folder" cascade="false" />
+    
+    <copy overwrite="true" todir="${web.folder}">
+      <fileset basedir="${build.results.folder}">
+        <include name="bin\*" />
+        <exclude name="bin\*.xml" />
+        <exclude name="bin\*.pdb" />
+      </fileset>
+    </copy>
+    <copy overwrite="true" todir="${web.folder}">
+      <fileset basedir="${build.results.folder}">
+        <include name="bin\App_Data\**\*" />
+      </fileset>
+    </copy>
+    <copy overwrite="true" todir="${web.folder}">
+      <fileset basedir="${build.results.folder}">
+        <include name="Web.config" />
+        <include name="crossdomain.xml" />
+        <include name="recognitions.svc" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="copy.package">
+    <property name="clean.folder.path" value="${package.folder}" />
+    <call target="clean.folder" cascade="false" />
+    
+    <copy overwrite="true" todir="${package.folder}">
+      <fileset basedir="${package.results.folder}">
+        <include name="*" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="generate.version">
+    <loadfile file="${versions.folder}\${version.file}" property="version.name" />
+    <property name="dot.index" value="${string::last-index-of(version.name,'.')+1}" />
+    <if test="${int::parse(dot.index) == 0}">
+      <property name="version.number" value="${int::parse(version.name)+1}" />
+      <property name="version.name" value="${version.number}" />
+    </if>
+    <if test="${int::parse(dot.index) > 0}">
+      <property name="number.length" value="${string::get-length(version.name) - int::parse(dot.index)}" />
+      <property name="version.number" value="${string::substring(version.name,int::parse(dot.index),int::parse(number.length))}" />
+      <property name="version.name" value="${string::substring(version.name,0,int::parse(dot.index))}${int::parse(version.number)+1}" />
+    </if>
+    <echo message="version ${version.name}" />
+    <echo file="${versions.folder}\${version.file}">${version.name}</echo>
+  </target>
+
+  <target name="deploy.artifacts">
+    <nant target="service_control" 
+          buildfile="${shared.scripts.folder}\service_control.build">
+      <properties>
+        <property name="service.name" value="w3svc" />
+        <property name="machine.name" value="${service.machine}" />
+        <property name="action" value="Stop" />
+        <property name="action.timeout" value="120000" />
+      </properties>
+    </nant>
+
+    <property name="target.machine.folder" 
+              value="\\${service.machine}\e$\wwwroot\speech\web" />
+    <copy overwrite="true" todir="${target.machine.folder}">
+      <fileset basedir="${web.folder}">
+        <include name="**/*" />
+      </fileset>
+    </copy>
+
+    <nant target="service_control" 
+          buildfile="${shared.scripts.folder}\service_control.build">
+      <properties>
+        <property name="service.name" value="w3svc" />
+        <property name="machine.name" value="${service.machine}" />
+        <property name="action" value="Start" />
+        <property name="action.timeout" value="120000" />
+      </properties>
+    </nant>
+  </target>
+
+  <target name="archive.artifacts">
+    <mkdir dir="${archives.folder}" if="${not directory::exists(archives.folder)}" />
+    <mkdir dir="${build.archive.folder}" if="${not directory::exists(build.archive.folder)}" />
+    <copy overwrite="true" todir="${build.archive.folder}">
+      <fileset basedir="${artifact.folder}">
+        <include name="**\*" />
+      </fileset>
+    </copy>
+  </target>
+
+</project>

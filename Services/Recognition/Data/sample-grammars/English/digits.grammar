@@ -1,0 +1,13 @@
+;
+;  Sample GSL file for a connected digit recognizer.
+;
+;  Examples of what you can say:
+;  (Pausing between words is not necessary.)
+;
+;  "One two three four five."
+;
+;  "Three two seven, oh six nine four."
+;
+
+.SENTENCE +[one two three four five six seven eight nine zero oh]
+

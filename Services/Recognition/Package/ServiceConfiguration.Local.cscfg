@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="ASRAzureService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="2" osVersion="*" >
+  <Role name="GlobalEnglish.Recognition.Web">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="SpeechRecognitionConnectionString" value="Data Source=mqzu3smfwl.database.windows.net;Initial Catalog=Speech;Min Pool Size=5;User ID=poem;Password=Brent532Beat" />      
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="vmadmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBqAYJKoZIhvcNAQcDoIIBmTCCAZUCAQAxggFZMIIBVQIBADA9MCkxJzAlBgNVBAMeHgBQAFUAQgBMAEkAUwBIAF8ATQBBAEMASABJAE4ARQIQqrt9I2zIPplMwYd88teOjDANBgkqhkiG9w0BAQEFAASCAQCuxDJtKfW4TGQ234ccTYOwvcwYRT8viTXeDYa4sw4wpxjlYQ2cgFIcz9Izfl2GjVRMK11bLfuHJOANPZ32rxwWiqR8/u+xZ1J+k8mHJCHzdz3PGdtrZ/1VFElUs4vjK01hec88kc+R96uGjEY4OtiubI0m8Z/SQeIHGkI8z7MuU4SpCj3vxaWp92CVHp8GsNAvTNGREu5yPFcPaApY7hxkaF2EcNj/WKlSKh0BDG5dJ7iXUcR5bWChZmRlZMI3XpIK1wydFUpqS8iif6H3RCudNZOUQjuXD/Rw4jXa6tHUS+HmYTMnWp7PfioVz/maeqWGXR+9UJRNupJEBdJtiPnBMDMGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQI0t+R8azZ2aSAEABsXdamNVPqUlVGGArmMGw=" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2039-12-31T23:59:59.0000000-08:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+	  <Certificate name="ServiceProvider" thumbprint="536BF6AD501D387B18415CF8B1ECE6559D09A3C9" thumbprintAlgorithm="sha1"/>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="E4740B013071432C8A9906F43EC717D5379A1226" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

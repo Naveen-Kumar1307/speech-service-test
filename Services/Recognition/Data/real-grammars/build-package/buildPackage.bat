@@ -1,0 +1,1 @@
+C:\Program Files\GlobalEnglish\ASR\bin\win32\eduspeak-compile ge english-p16-na-050930-v2 -override_dictionary ge.dictionary >> build_ge_output.txt 2>&1

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46A930D0-B479-4B5B-BFD6-3169731D4C08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlobalEnglish.Recognition.Services</RootNamespace>
+    <AssemblyName>GlobalEnglish.Recognition.Services</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\Common\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net, Version=1.2.0.2, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\Common\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\Common\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.1.20001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\WebOrb\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EduSpeakRecognizer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpeechFileRecognizer.cs" />
+    <Compile Include="TranscodeSpeechRecognizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Library\Utility\Diagnostics\GlobalEnglish.Utility.Diagnostics.csproj">
+      <Project>{DDB97AFE-D193-4EF4-B0CA-5BBE206A8DA0}</Project>
+      <Name>GlobalEnglish.Utility.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Library\Utility\Parameters\GlobalEnglish.Utility.Parameters.csproj">
+      <Project>{D7CF0B50-DF25-4FF4-B90A-45011EAAF6B3}</Project>
+      <Name>GlobalEnglish.Utility.Parameters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Library\Utility\Xml\GlobalEnglish.Utility.Xml.csproj">
+      <Project>{9F535537-77C1-4A2A-A67C-4DFBB18D256A}</Project>
+      <Name>GlobalEnglish.Utility.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\GlobalEnglish.Recognition.DataContracts.csproj">
+      <Project>{43D24A4C-7AB8-4C5F-87EC-9F6B2D079059}</Project>
+      <Name>GlobalEnglish.Recognition.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\EduSpeakNET\EduSpeakNET.csproj">
+      <Project>{3492A345-3CF7-42E2-9653-DDF6FC1CE81D}</Project>
+      <Name>EduSpeakNET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Media\AudioConverters\GlobalEnglish.Media.AudioConverters.csproj">
+      <Project>{E0C66B17-D6A0-4532-AD8D-475F881A8BC6}</Project>
+      <Name>GlobalEnglish.Media.AudioConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Media\ServiceContracts\GlobalEnglish.Media.ServiceContracts.csproj">
+      <Project>{0DE08BB0-AF1C-4B85-9606-4EB7D174B310}</Project>
+      <Name>GlobalEnglish.Media.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceContracts\GlobalEnglish.Recognition.ServiceContracts.csproj">
+      <Project>{8ED3550E-24EA-4AFD-AC6D-84174C5AD1AA}</Project>
+      <Name>GlobalEnglish.Recognition.ServiceContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Library\rcapi.dll">
+      <Link>rcapi.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="SpringContext.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ServerModels.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

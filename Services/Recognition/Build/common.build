@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project name="Common Build Targets" basedir=".">
+
+  <target name="build.azure.package">
+    <nant buildfile="${shared.scripts.folder}\msbuild.build" target="build.azure.package">
+      <properties>
+        <property name="working.folder" value="${build.folder}" />
+        <property name="azure.profile" value="Cloud.${target.environment}" />
+      </properties>
+    </nant>
+  </target>
+
+  <target name="build.solution">
+    <nant buildfile="${shared.scripts.folder}\msbuild.build" target="build.solution">
+      <properties>
+        <property name="working.folder" value="${build.folder}" />
+      </properties>
+    </nant>
+  </target>
+
+  <target name="preconfigure.properties">
+    <property name="environment.name" value="${target.environment}" overwrite="false" />
+    <property name="reference.folder.name" value="${target.environment}" />
+    <property name="references.folder" value="${properties.folder}\${reference.folder.name}" />
+
+    <if test="${property::exists('branch')}">
+      <if test="${string::to-lower(environment.name)=='dev'}">
+        <property name="references.folder" value="${references.folder}\${branch}" />
+      </if>
+
+      <if test="${string::to-lower(environment.name)=='test'}">
+        <property name="references.folder" value="${references.folder}\${branch}" />
+      </if>
+    </if>
+
+  </target>
+
+  <target name="configure.target" depends="preconfigure.properties">
+    <nant target="build.deploy.in.place"
+          buildfile="${shared.scripts.folder}\configure.build">
+      <properties>
+        <property name="config.name" value="${target.file}" />
+        <property name="config.properties" value="${references.folder}\${reference.file}" />
+        <property name="config.template.dir" value="${target.folder}" />
+      </properties>
+    </nant>
+  </target>
+
+  <if test="${not property::exists('nunit.folder')}">
+    <property name="nunit.folder" value="C:\Tools\NUnit\bin\net-2.0" />
+    <echo message="nunit.folder property not set, so using ${nunit.folder}" />
+  </if>
+
+  <target name="test.dll">
+    <echo message="Running ${test.assembly} in ${tests.folder}" />
+    <exec program="nunit-console-x86" basedir="${nunit.folder}"
+      output="${build.folder}\test.results\${test.assembly}.nunit.log"
+      workingdir="${tests.folder}">
+      <arg value="${tests.folder}\${test.assembly}.dll" />
+      <arg value="/xml=${build.folder}\test.results\${test.assembly}.xml" />
+      <arg value="/nologo" />
+      <arg value="/nodots" />
+    </exec>
+  </target>
+
+</project>
+

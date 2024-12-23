@@ -1,0 +1,6 @@
+
+This package was created from the directory
+	C:\Program Files\Eduspeak\sample-grammars\English\batchrec-voicemail-test
+by running the following command:
+	eduspeak-compile GE/GE english-p16-na-050930-v2 -override_dictionary GE/GE.dictionary 
+

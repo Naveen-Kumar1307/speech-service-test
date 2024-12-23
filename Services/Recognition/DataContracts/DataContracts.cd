@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GlobalEnglish.Recognition.DataContracts.RecognitionResult">
+    <Position X="0.5" Y="4" Width="2" />
+    <AssociationLine Name="Sentence" Type="GlobalEnglish.Recognition.DataContracts.SentenceMatch" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.438" Y="8.157" />
+        <Point X="1.438" Y="8.532" />
+        <Point X="4.688" Y="8.532" />
+        <Point X="4.688" Y="9" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAEAAAQAEEACIABgAAEAAAACAAAgAlQBQJAoAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AudioMeasure" />
+      <Property Name="Sentence" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ResultDetails" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.AudioQuality">
+    <Position X="5.75" Y="4" Width="1.75" />
+    <AssociationLine Name="Truncation" Type="GlobalEnglish.Recognition.DataContracts.AudioTruncation" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.625" Y="5.856" />
+        <Point X="6.625" Y="7.219" />
+        <Point X="8.5" Y="7.219" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEQABAAAQAAAAAAAAEAAAAAAAAAAAAABAAAAABAAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Level" />
+      <Property Name="NoiseLevel" />
+      <Property Name="Truncation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.SentenceQuality">
+    <Position X="0.5" Y="9" Width="2.25" />
+    <AssociationLine Name="Words" Type="GlobalEnglish.Recognition.DataContracts.WordQuality" FixedToPoint="true">
+      <Path>
+        <Point X="2.312" Y="11.842" />
+        <Point X="2.312" Y="12.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Phonemes" Type="GlobalEnglish.Recognition.DataContracts.PhonemeQuality" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1" Y="11.842" />
+        <Point X="1" Y="15.312" />
+        <Point X="3.75" Y="15.312" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAgAAwAigAABAIAAAAAAIAAAAAAgAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Words" />
+      <Property Name="Phonemes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.WordQuality">
+    <Position X="1.5" Y="12.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAAACAAAAgAgAAAAAABAIAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.SentenceMatch">
+    <Position X="3.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAECAAEAAAAAIBAAAgABAAEAAAAIAAABAAEQACAAUA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Quality" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Problems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.PhonemeQuality">
+    <Position X="3.75" Y="13" Width="2" />
+    <Members>
+      <Field Name="ExcludedPhones" Hidden="true" />
+      <Field Name="IncludedPhones" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACBIAAAAECAAAAgAAAgAASAAAgAAAAAAQBAAAAAAAMA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.PronunciationProblem">
+    <Position X="7" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAQAAAAAAQAAAAAAgIA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.RecognitionRequest">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAgAAEACAgAAAAKAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>RecognitionRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RecognitionType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ExpectedResults" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GlobalEnglish.Recognition.DataContracts.ExpectedResult">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAEAAAAAAAAgAAAAA=</HashCode>
+      <FileName>RecognitionRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.RecognitionKind">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAACBAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.ResultKind">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAACQAE=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.ResultDetailKind">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAKAAAAAAAAgABAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.PronunciationProblemKind">
+    <Position X="7" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAIA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.AudioLevel">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAQAAAEAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.AudioTruncation">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GlobalEnglish.Recognition.DataContracts.AudioNoise">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAgAAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>RecognitionResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="Continuous ASR Build" default="build" basedir=".">
+  <include buildfile="common.build" />
+
+  <if test="${not property::exists('shared.scripts.folder')}">
+    <fail message="shared.scripts.folder property not set, so can't build ASR service" />
+  </if>
+
+  <if test="${not property::exists('shared.references.folder')}">
+    <fail message="shared.references.folder property not set, so can't build ASR service" />
+  </if>
+
+  <if test="${not property::exists('connections.folder')}">
+    <fail message="connections.folder property not set, so can't build ASR service" />
+  </if>
+
+  <if test="${not property::exists('source.folder')}">
+    <fail message="source.folder property not set, so can't build ASR service" />
+  </if>
+
+  <if test="${not property::exists('target.environment')}">
+    <property name="target.environment" value="dev" />
+    <echo message="target.environment property not set, using default ${target.environment}" />
+  </if>
+
+  <if test="${not property::exists('ms.build.configuration')}">
+    <property name="ms.build.configuration" value="Release" />
+    <echo message="ms.build.configuration property not set, so using ${ms.build.configuration}" />
+  </if>
+
+  <if test="${not property::exists('ms.build.logger')}">
+    <property name="ms.build.logger" value="ThoughtWorks.CruiseControl.MSBuild.XmlLogger,ThoughtWorks.CruiseControl.MSBuild.dll;ms-build.output.xml" />
+    <echo message="ms.build.logger property not set, so using default ${ms.build.logger}" />
+  </if>
+
+  <target name="configure">
+    <property name="properties.folder" value="${shared.references.folder}" />
+    <property name="services.folder" value="${source.folder}\Services" />
+    <property name="build.folder" value="${services.folder}\Recognition\Build" />
+    <property name="tests.folder" value="${services.folder}\Recognition\TestBin" />
+    <property name="solution.path" value="${build.folder}" />
+    <property name="solution.name" value="ASR.Azure" />
+  </target>
+
+  <target name="clean" depends="configure">
+    <delete>
+      <fileset>
+        <include name="${source.folder}/**/obj/*" />
+        <include name="${source.folder}/**/bin/${ms.build.configuration}/*" />
+        <include name="${source.folder}/**/TestBin/*" />
+        <include name="${services.folder}/Recognition/Web/bin/*" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="clean.fully" depends="configure">
+    <delete dir="${build.folder}\test.results" />
+
+    <delete>
+      <fileset>
+        <include name="${source.folder}/**/obj/" />
+        <include name="${source.folder}/**/bin/" />
+        <include name="${source.folder}/**/TestBin/" />
+      </fileset>
+    </delete>
+
+    <delete>
+      <fileset>
+        <include name="${source.folder}/**/obj" />
+        <include name="${source.folder}/**/bin" />
+        <include name="${source.folder}/**/TestBin" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="configure.build" depends="configure">
+    <property name="reference.file" value="ASR.properties" />
+    <property name="target.folder" value="${services.folder}\Recognition\Web" />
+    <property name="target.file" value="Web.config" />
+    <call target="configure.target" cascade="false" />
+  </target>
+
+  <target name="configure.package" depends="configure.build">
+    <property name="reference.file" value="ASR.properties" />
+    <property name="target.folder" value="${services.folder}\Recognition\Package" />
+    <property name="target.file" value="ServiceDefinition.csdef" />
+    <call target="configure.target" cascade="false" />
+
+    <property name="reference.file" value="ASR.properties" />
+    <property name="target.folder" value="${services.folder}\Recognition\Package" />
+    <property name="target.file" value="ServiceConfiguration.Cloud.cscfg" />
+    <call target="configure.target" cascade="false" />
+
+    <property name="reference.file" value="ASR.properties" />
+    <property name="environment.name" value="dev" />
+    <property name="target.folder" value="${services.folder}\Recognition\Package" />
+    <property name="target.file" value="ServiceConfiguration.Local.cscfg" />
+    <call target="configure.target" cascade="false" />
+  </target>
+
+  <target name="build" depends="clean,build.service"/>
+
+  <target name="build.service" depends="configure.build">
+    <call target="build.solution" cascade="false" />
+  </target>
+
+  <target name="build.package" depends="configure.package">
+    <call target="build.azure.package" cascade="false" />
+  </target>
+
+  <target name="build.tests" depends="configure.build,clean.fully">
+    <property name="solution.name" value="ASR.Tests" />
+    <call target="build.solution" cascade="false" />
+  </target>
+
+  <target name="run.tests" depends="build.tests">
+    <mkdir dir="${build.folder}\test.results" />
+
+    <property name="test.assembly" value="GlobalEnglish.Media.AudioConverters.Tests" />
+    <call target="test.dll" cascade="false" />
+
+    <property name="test.assembly" value="GlobalEnglish.Recognition.Services.Tests" />
+    <call target="test.dll" cascade="false" />
+
+    <property name="test.assembly" value="GlobalEnglish.Recognition.SimpleService.Tests" />
+    <call target="test.dll" cascade="false" />
+  </target>
+
+</project>

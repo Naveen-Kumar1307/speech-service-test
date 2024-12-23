@@ -1,0 +1,11 @@
+package.CreationDirectory	ge
+package.ID			NUANCE,EduSpeak2_RAPI(2.13.01.0002),1100,64
+package.NLDefined		FALSE
+package.NumGrammars		6
+package.GrammarName0		.SENTENCE
+package.GrammarName1		.SENTENCE1
+package.GrammarName2		.SENTENCE2
+package.GrammarName3		.SENTENCE3
+package.GrammarName4		.SENTENCE4
+package.GrammarName5		.SENTENCE5
+rec.pass1.gp.Method		unflattened
