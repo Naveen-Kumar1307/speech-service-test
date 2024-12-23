@@ -24,4 +24,4 @@ COPY . /inetpub/wwwroot/
 EXPOSE 80
 
 # Default CMD to run IIS
-CMD ["cmd", "/c", "iisreset", "/start"]
+#CMD ["cmd", "/c", "iisreset", "/start"]
