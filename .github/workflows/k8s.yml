@@ -23,8 +23,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t $IMAGE_NAME:v1 .
+        docker build -t ${{ env.IMAGE_NAME }}:v1 .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push $IMAGE_NAME:v1
+        docker push ${{ env.IMAGE_NAME }}:v1
