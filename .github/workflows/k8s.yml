@@ -10,6 +10,7 @@ jobs:
     runs-on: windows-2019
     env:
       IMAGE_NAME: parthibanlearnship/speech-service
+      IMSAGE_VERSION: v2
 
     steps:
     - name: Checkout code
@@ -23,8 +24,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ env.IMAGE_NAME }}:v1 .
+        docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMSAGE_VERSION }} .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push ${{ env.IMAGE_NAME }}:v1
+        docker push ${{ env.IMAGE_NAME }}:${{ env.IMSAGE_VERSION }}
