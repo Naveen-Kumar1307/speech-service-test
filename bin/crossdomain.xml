@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- http://www.globalenglish.com/crossdomain.xml -->
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+  <allow-access-from domain="*.globalenglish.com" />
+  <allow-http-request-headers-from domain="*" headers="*" secure="false"/>
+</cross-domain-policy>

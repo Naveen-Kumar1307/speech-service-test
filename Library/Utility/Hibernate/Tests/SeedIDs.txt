@@ -1,7 +1,0 @@
-﻿create table ids
-(
-	table_name varchar(100),
-	table_id int
-);
-
-insert into ids (table_name, table_id) values ('SampleAssigned', 0);

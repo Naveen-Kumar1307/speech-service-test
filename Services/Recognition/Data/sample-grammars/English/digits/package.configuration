@@ -1,5 +1,0 @@
-package.CreationDirectory	digits
-package.ID			NUANCE,EduSpeak2_RAPI(2.16.01.0001),1100,144
-package.NLDefined		FALSE
-package.NumGrammars		1
-package.GrammarName0		.SENTENCE

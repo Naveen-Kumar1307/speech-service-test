@@ -1,7 +1,0 @@
-# Scoring:
-Scoring.Tree		${NUANCE}/data/scoring/english-g16-na-980102.s980122/tree
-Scoring.Attributes	${NUANCE}/data/scoring/english-g16-na-980102.s980122/attr
-
-Scoring.Threshold	0.5
-Scoring.Smoothing	TRUE
-Scoring.TreeMapping	optimum
