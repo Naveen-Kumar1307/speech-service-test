@@ -1,5 +1,5 @@
 # Use the official IIS base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+FROM mcr.microsoft.com/windows/servercore:ltsc2022-amd64
 
 # Enable IIS and its features
 RUN dism /online /enable-feature /all /featurename:IIS-WebServerRole /NoRestart \
