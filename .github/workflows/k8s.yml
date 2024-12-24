@@ -23,7 +23,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ env.IMAGE_NAME }}:${{ github.run_number }} .
+        docker build -t ${{ env.IMAGE_NAME }}:${{ github.run_number }} --platform windows/amd63 .
 
     - name: Push Docker image to Docker Hub
       run: |
