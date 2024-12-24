@@ -1,15 +1,15 @@
-# Use the official Windows Server Core image with IIS
-FROM mcr.microsoft.com/windows/servercore:ltsc2022
+# Use Windows Server 2022 (LTSC 2022) as the base image
+FROM mcr.microsoft.com/windows/server:ltsc2022
 
-# Set the working directory to IIS root
+# Set the working directory to the IIS root directory
 WORKDIR /inetpub/wwwroot
 
 # Copy the local files into the container
 COPY . .
 
-# Provide the source path for missing features (adjust D:\sources\sxs if necessary)
+# Enable IIS and other required features for the application
 RUN powershell -Command \
-    # Enable IIS-related features
+    # Install IIS Web Server Role and associated features
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-CommonHttpFeatures -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpErrors -All -NoRestart -Source D:\sources\sxs; \
@@ -30,7 +30,7 @@ RUN powershell -Command \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPServer -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPSvc -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPExtensibility -All -NoRestart -Source D:\sources\sxs; \
-    # Enable Hyper-V and Containers if required
+    # Enable Hyper-V and Containers (if required)
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell -All -NoRestart -Source D:\sources\sxs; \
@@ -38,7 +38,7 @@ RUN powershell -Command \
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-Clients -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart -Source D:\sources\sxs
 
-# Expose the default HTTP port
+# Expose port 80 for web traffic
 EXPOSE 80
 
 # Start IIS service and keep the container running
