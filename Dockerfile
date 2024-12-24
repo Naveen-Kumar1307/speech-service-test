@@ -1,5 +1,5 @@
 # Use Windows Server 2022 (LTSC 2022) as the base image
-FROM mcr.microsoft.com/windows/server:ltsc2022
+FROM --platform=windows/amd64 mcr.microsoft.com/windows/server:ltsc2022
 
 # Set the working directory to the IIS root directory
 WORKDIR /inetpub/wwwroot
