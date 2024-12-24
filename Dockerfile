@@ -1,43 +1,44 @@
 # Use the official Windows Server Core image with IIS
 FROM mcr.microsoft.com/windows/servercore/iis
 
-# Set the working directory
+# Set the working directory to IIS root
 WORKDIR /inetpub/wwwroot
 
 # Copy the local files into the container
 COPY . .
 
-# Enable required Windows features using DISM
-RUN dism /online /enable-feature /featurename:IIS-WebServerRole /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-CommonHttpFeatures /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-HttpErrors /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-HttpRedirect /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-ApplicationDevelopment /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-Security /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-RequestFiltering /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-HealthAndDiagnostics /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-HttpLogging /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-LoggingLibraries /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-RequestMonitor /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-HttpTracing /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-URLAuthorization /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-IPSecurity /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-Performance /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-ManagementConsole /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-ManagementService /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-FTPServer /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-FTPSvc /all /norestart && \
-    dism /online /enable-feature /featurename:IIS-FTPExtensibility /all /norestart && \
-    dism /online /enable-feature /featurename:Containers /all /norestart && \
-    dism /online /enable-feature /featurename:Microsoft-Hyper-V /all /norestart && \
-    dism /online /enable-feature /featurename:Microsoft-Hyper-V-Tools-All /all /norestart && \
-    dism /online /enable-feature /featurename:Microsoft-Hyper-V-Management-PowerShell /all /norestart && \
-    dism /online /enable-feature /featurename:Microsoft-Hyper-V-Services /all /norestart && \
-    dism /online /enable-feature /featurename:Microsoft-Hyper-V-Management-Clients /all /norestart && \
-    dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+# Enable IIS-related features using PowerShell and Enable-WindowsOptionalFeature
+RUN powershell -Command \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-CommonHttpFeatures -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpErrors -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpRedirect -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-ApplicationDevelopment -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-Security -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-RequestFiltering -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HealthAndDiagnostics -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpLogging -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-LoggingLibraries -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-RequestMonitor -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpTracing -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-URLAuthorization -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-IPSecurity -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-Performance -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-ManagementConsole -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-ManagementService -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPServer -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPSvc -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPExtensibility -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Services -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-Clients -All -NoRestart; \
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -All -NoRestart
 
-# Set the port to run the container on
+# Expose the default HTTP port
 EXPOSE 80
 
-# Start IIS
+# Start IIS service
 CMD ["powershell", "-NoProfile", "-Command", "Start-Service -Name W3SVC; while ($true) {Start-Sleep -Seconds 3600}"]
