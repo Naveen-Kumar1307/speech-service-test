@@ -39,7 +39,7 @@ RUN powershell -Command \
     #Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart -Source D:\sources\sxs
 
 # Expose port 80 for web traffic
-EXPOSE 80
+#EXPOSE 80
 
 # Start IIS service and keep the container running
 CMD ["powershell", "-NoProfile", "-Command", "Start-Service -Name W3SVC; while ($true) {Start-Sleep -Seconds 3600}"]
