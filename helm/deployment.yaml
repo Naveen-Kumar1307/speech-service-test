@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: speech-service
+  namespace: speech-service
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: speech-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: speech-service
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows # Ensure it targets Windows nodes
+        eks.amazonaws.com/nodegroup: Speech-service
+      containers:
+        - name: speech-service
+          image: parthibanlearnship/speech-service:20
+          imagePullPolicy: Always
+      restartPolicy: Always

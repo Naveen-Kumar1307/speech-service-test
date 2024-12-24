@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: speech-service-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:eu-central-1:908821207639:certificate/92f20ba2-cfdd-4717-bf67-f401b27ce853"
+    alb.ingress.kubernetes.io/group.name: learnship-prod-ingress-alb-group
+spec:
+  rules:
+    - host: speech-beta.learnship.com
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: speech-service
+                port:
+                  number: 80
+            path: /
