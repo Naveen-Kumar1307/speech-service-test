@@ -31,12 +31,12 @@ RUN powershell -Command \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPSvc -All -NoRestart -Source D:\sources\sxs; \
     Enable-WindowsOptionalFeature -Online -FeatureName IIS-FTPExtensibility -All -NoRestart -Source D:\sources\sxs; \
     # Enable Hyper-V and Containers (if required)
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart -Source D:\sources\sxs; \
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All -All -NoRestart -Source D:\sources\sxs; \
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell -All -NoRestart -Source D:\sources\sxs; \
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Services -All -NoRestart -Source D:\sources\sxs; \
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-Clients -All -NoRestart -Source D:\sources\sxs; \
-    Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart -Source D:\sources\sxs
+    #Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart -Source D:\sources\sxs; \
+    #Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All -All -NoRestart -Source D:\sources\sxs; \
+   # Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell -All -NoRestart -Source D:\sources\sxs; \
+    #Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Services -All -NoRestart -Source D:\sources\sxs; \
+    #Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-Clients -All -NoRestart -Source D:\sources\sxs; \
+    #Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart -Source D:\sources\sxs
 
 # Expose port 80 for web traffic
 EXPOSE 80
