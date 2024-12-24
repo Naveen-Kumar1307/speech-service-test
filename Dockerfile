@@ -28,8 +28,6 @@ RUN dism /online /enable-feature /featurename:IIS-WebServerRole /all /norestart 
     dism /online /enable-feature /featurename:IIS-FTPServer /all /norestart && \
     dism /online /enable-feature /featurename:IIS-FTPSvc /all /norestart && \
     dism /online /enable-feature /featurename:IIS-FTPExtensibility /all /norestart && \
-    dism /online /enable-feature /featurename:MSMQ-Server /all /norestart && \
-    dism /online /enable-feature /featurename:MSMQ-Container /all /norestart && \
     dism /online /enable-feature /featurename:Containers /all /norestart && \
     dism /online /enable-feature /featurename:Microsoft-Hyper-V /all /norestart && \
     dism /online /enable-feature /featurename:Microsoft-Hyper-V-Tools-All /all /norestart && \
