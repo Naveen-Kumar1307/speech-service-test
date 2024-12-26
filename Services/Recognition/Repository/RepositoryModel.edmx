@@ -1,0 +1,787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RepositoryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RepositoryModelStoreContainer">
+          <EntitySet Name="AudioQualities" EntityType="RepositoryModel.Store.AudioQualities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExpectedResults" EntityType="RepositoryModel.Store.ExpectedResults" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PhonemeQualities" EntityType="RepositoryModel.Store.PhonemeQualities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecognitionAttempts" EntityType="RepositoryModel.Store.RecognitionAttempts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecognitionRequests" EntityType="RepositoryModel.Store.RecognitionRequests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RecognitionResults" EntityType="RepositoryModel.Store.RecognitionResults" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SentenceMatches" EntityType="RepositoryModel.Store.SentenceMatches" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SentenceQualities" EntityType="RepositoryModel.Store.SentenceQualities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="RepositoryModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WordQualities" EntityType="RepositoryModel.Store.WordQualities" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_RecognitionAttemptRecognitionRequest" Association="RepositoryModel.Store.FK_RecognitionAttemptRecognitionRequest">
+            <End Role="RecognitionRequests" EntitySet="RecognitionRequests" />
+            <End Role="RecognitionAttempts" EntitySet="RecognitionAttempts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecognitionAttemptRecognitionResult" Association="RepositoryModel.Store.FK_RecognitionAttemptRecognitionResult">
+            <End Role="RecognitionResults" EntitySet="RecognitionResults" />
+            <End Role="RecognitionAttempts" EntitySet="RecognitionAttempts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecognitionRequestExpectedResult" Association="RepositoryModel.Store.FK_RecognitionRequestExpectedResult">
+            <End Role="RecognitionRequests" EntitySet="RecognitionRequests" />
+            <End Role="ExpectedResults" EntitySet="ExpectedResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecognitionResultAudioQuality" Association="RepositoryModel.Store.FK_RecognitionResultAudioQuality">
+            <End Role="AudioQualities" EntitySet="AudioQualities" />
+            <End Role="RecognitionResults" EntitySet="RecognitionResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecognitionResultSentenceMatch" Association="RepositoryModel.Store.FK_RecognitionResultSentenceMatch">
+            <End Role="SentenceMatches" EntitySet="SentenceMatches" />
+            <End Role="RecognitionResults" EntitySet="RecognitionResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentenceMatchSentenceQuality" Association="RepositoryModel.Store.FK_SentenceMatchSentenceQuality">
+            <End Role="SentenceQualities" EntitySet="SentenceQualities" />
+            <End Role="SentenceMatches" EntitySet="SentenceMatches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentenceQualityPhonemeQuality" Association="RepositoryModel.Store.FK_SentenceQualityPhonemeQuality">
+            <End Role="SentenceQualities" EntitySet="SentenceQualities" />
+            <End Role="PhonemeQualities" EntitySet="PhonemeQualities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SentenceQualityWordQuality" Association="RepositoryModel.Store.FK_SentenceQualityWordQuality">
+            <End Role="SentenceQualities" EntitySet="SentenceQualities" />
+            <End Role="WordQualities" EntitySet="WordQualities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPhonemeQuality" Association="RepositoryModel.Store.FK_UserPhonemeQuality">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PhonemeQualities" EntitySet="PhonemeQualities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRecognitionAttempt" Association="RepositoryModel.Store.FK_UserRecognitionAttempt">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RecognitionAttempts" EntitySet="RecognitionAttempts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AudioQualities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Level" Type="int" Nullable="false" />
+          <Property Name="Truncation" Type="int" Nullable="false" />
+          <Property Name="SignalNoiseRatio" Type="real" Nullable="false" />
+          <Property Name="NoiseLevel" Type="int" Nullable="false" />
+          <Property Name="Miscellany" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ExpectedResults">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Answer" Type="nvarchar(max)" />
+          <Property Name="FullAnswer" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecognitionRequest_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhonemeQualities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneName" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="Grapheme" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SentenceQualityId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecognitionAttempts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EngineId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RecognitionRequest_Id" Type="int" Nullable="false" />
+          <Property Name="RecognitionResult_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecognitionRequests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="RecognitionType" Type="int" Nullable="false" />
+          <Property Name="Grammar" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="RecognitionResults">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="ResultDetail" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="RecognitionTime" Type="int" Nullable="false" />
+          <Property Name="QueuedRecognitionTime" Type="int" Nullable="false" />
+          <Property Name="RecordedFileName" Type="nvarchar(max)" />
+          <Property Name="RecordedFileType" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sentence_Id" Type="int" Nullable="false" />
+          <Property Name="AudioMeasure_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SentenceMatches">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="RecognizedText" Type="nvarchar(max)" />
+          <Property Name="Interpretation" Type="nvarchar(max)" />
+          <Property Name="MatchedIndex" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Quality_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SentenceQualities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FrameCount" Type="int" Nullable="false" />
+          <Property Name="Confidence" Type="int" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="PhraseConfidence" Type="int" Nullable="false" />
+          <Property Name="PhraseAcceptanceThreshold" Type="int" Nullable="false" />
+          <Property Name="SentenceAcceptanceThreshold" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClsUserId" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WordQualities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PhoneCount" Type="int" Nullable="false" />
+          <Property Name="StartFrame" Type="int" Nullable="false" />
+          <Property Name="EndFrame" Type="int" Nullable="false" />
+          <Property Name="FrameCount" Type="int" Nullable="false" />
+          <Property Name="Confidence" Type="int" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="Accepted" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SentenceQuality_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_RecognitionAttemptRecognitionRequest">
+          <End Role="RecognitionRequests" Type="RepositoryModel.Store.RecognitionRequests" Multiplicity="1" />
+          <End Role="RecognitionAttempts" Type="RepositoryModel.Store.RecognitionAttempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RecognitionRequests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecognitionAttempts">
+              <PropertyRef Name="RecognitionRequest_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecognitionAttemptRecognitionResult">
+          <End Role="RecognitionResults" Type="RepositoryModel.Store.RecognitionResults" Multiplicity="1" />
+          <End Role="RecognitionAttempts" Type="RepositoryModel.Store.RecognitionAttempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RecognitionResults">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecognitionAttempts">
+              <PropertyRef Name="RecognitionResult_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecognitionRequestExpectedResult">
+          <End Role="RecognitionRequests" Type="RepositoryModel.Store.RecognitionRequests" Multiplicity="1" />
+          <End Role="ExpectedResults" Type="RepositoryModel.Store.ExpectedResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RecognitionRequests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpectedResults">
+              <PropertyRef Name="RecognitionRequest_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecognitionResultAudioQuality">
+          <End Role="AudioQualities" Type="RepositoryModel.Store.AudioQualities" Multiplicity="1" />
+          <End Role="RecognitionResults" Type="RepositoryModel.Store.RecognitionResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioQualities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecognitionResults">
+              <PropertyRef Name="AudioMeasure_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecognitionResultSentenceMatch">
+          <End Role="SentenceMatches" Type="RepositoryModel.Store.SentenceMatches" Multiplicity="1" />
+          <End Role="RecognitionResults" Type="RepositoryModel.Store.RecognitionResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SentenceMatches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecognitionResults">
+              <PropertyRef Name="Sentence_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentenceMatchSentenceQuality">
+          <End Role="SentenceQualities" Type="RepositoryModel.Store.SentenceQualities" Multiplicity="1" />
+          <End Role="SentenceMatches" Type="RepositoryModel.Store.SentenceMatches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SentenceQualities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SentenceMatches">
+              <PropertyRef Name="Quality_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentenceQualityPhonemeQuality">
+          <End Role="SentenceQualities" Type="RepositoryModel.Store.SentenceQualities" Multiplicity="1" />
+          <End Role="PhonemeQualities" Type="RepositoryModel.Store.PhonemeQualities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SentenceQualities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhonemeQualities">
+              <PropertyRef Name="SentenceQualityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SentenceQualityWordQuality">
+          <End Role="SentenceQualities" Type="RepositoryModel.Store.SentenceQualities" Multiplicity="1" />
+          <End Role="WordQualities" Type="RepositoryModel.Store.WordQualities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SentenceQualities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WordQualities">
+              <PropertyRef Name="SentenceQuality_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPhonemeQuality">
+          <End Role="Users" Type="RepositoryModel.Store.Users" Multiplicity="1" />
+          <End Role="PhonemeQualities" Type="RepositoryModel.Store.PhonemeQualities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhonemeQualities">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRecognitionAttempt">
+          <End Role="Users" Type="RepositoryModel.Store.Users" Multiplicity="1" />
+          <End Role="RecognitionAttempts" Type="RepositoryModel.Store.RecognitionAttempts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecognitionAttempts">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetRecentPhonemes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="treshold" Type="int" Mode="In" />
+          <Parameter Name="phonemeCount" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RepositoryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="RepositoryModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RecognitionRequests" EntityType="RepositoryModel.RecognitionRequest" />
+          <EntitySet Name="ExpectedResults" EntityType="RepositoryModel.ExpectedResult" />
+          <AssociationSet Name="RecognitionRequestExpectedResult" Association="RepositoryModel.RecognitionRequestExpectedResult">
+            <End Role="RecognitionRequest" EntitySet="RecognitionRequests" />
+            <End Role="ExpectedResult" EntitySet="ExpectedResults" />
+          </AssociationSet>
+          <EntitySet Name="RecognitionResults" EntityType="RepositoryModel.RecognitionResult" />
+          <EntitySet Name="AudioQualities" EntityType="RepositoryModel.AudioQuality" />
+          <EntitySet Name="SentenceMatches" EntityType="RepositoryModel.SentenceMatch" />
+          <EntitySet Name="SentenceQualities" EntityType="RepositoryModel.SentenceQuality" />
+          <EntitySet Name="WordQualities" EntityType="RepositoryModel.WordQuality" />
+          <AssociationSet Name="SentenceQualityWordQuality" Association="RepositoryModel.SentenceQualityWordQuality">
+            <End Role="SentenceQuality" EntitySet="SentenceQualities" />
+            <End Role="WordQuality" EntitySet="WordQualities" />
+          </AssociationSet>
+          <AssociationSet Name="SentenceMatchSentenceQuality" Association="RepositoryModel.SentenceMatchSentenceQuality">
+            <End Role="SentenceMatch" EntitySet="SentenceMatches" />
+            <End Role="SentenceQuality" EntitySet="SentenceQualities" />
+          </AssociationSet>
+          <AssociationSet Name="RecognitionResultSentenceMatch" Association="RepositoryModel.RecognitionResultSentenceMatch">
+            <End Role="RecognitionResult" EntitySet="RecognitionResults" />
+            <End Role="SentenceMatch" EntitySet="SentenceMatches" />
+          </AssociationSet>
+          <AssociationSet Name="RecognitionResultAudioQuality" Association="RepositoryModel.RecognitionResultAudioQuality">
+            <End Role="RecognitionResult" EntitySet="RecognitionResults" />
+            <End Role="AudioQuality" EntitySet="AudioQualities" />
+          </AssociationSet>
+          <EntitySet Name="RecognitionAttempts" EntityType="RepositoryModel.RecognitionAttempt" />
+          <AssociationSet Name="RecognitionAttemptRecognitionRequest" Association="RepositoryModel.RecognitionAttemptRecognitionRequest">
+            <End Role="RecognitionAttempt" EntitySet="RecognitionAttempts" />
+            <End Role="RecognitionRequest" EntitySet="RecognitionRequests" />
+          </AssociationSet>
+          <AssociationSet Name="RecognitionAttemptRecognitionResult" Association="RepositoryModel.RecognitionAttemptRecognitionResult">
+            <End Role="RecognitionAttempt" EntitySet="RecognitionAttempts" />
+            <End Role="RecognitionResult" EntitySet="RecognitionResults" />
+          </AssociationSet>
+          <EntitySet Name="PhonemeQualities" EntityType="RepositoryModel.PhonemeQuality" />
+          <EntitySet Name="Users" EntityType="RepositoryModel.User" />
+          <AssociationSet Name="UserRecognitionAttempt" Association="RepositoryModel.UserRecognitionAttempt">
+            <End Role="User" EntitySet="Users" />
+            <End Role="RecognitionAttempt" EntitySet="RecognitionAttempts" />
+          </AssociationSet>
+          <AssociationSet Name="UserPhonemeQuality" Association="RepositoryModel.UserPhonemeQuality">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PhonemeQuality" EntitySet="PhonemeQualities" />
+          </AssociationSet>
+          <AssociationSet Name="SentenceQualityPhonemeQuality" Association="RepositoryModel.SentenceQualityPhonemeQuality">
+            <End Role="SentenceQuality" EntitySet="SentenceQualities" />
+            <End Role="PhonemeQuality" EntitySet="PhonemeQualities" />
+          </AssociationSet>
+          <FunctionImport Name="GetRecentPhonemes" EntitySet="PhonemeQualities" ReturnType="Collection(RepositoryModel.PhonemeQuality)">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="treshold" Mode="In" Type="Int32" />
+            <Parameter Name="phonemeCount" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="RecognitionRequest" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="RecognitionType" Nullable="false" />
+          <Property Type="String" Name="Grammar" Nullable="true" />
+          <NavigationProperty Name="ExpectedResults" Relationship="RepositoryModel.RecognitionRequestExpectedResult" FromRole="RecognitionRequest" ToRole="ExpectedResult" />
+          <NavigationProperty Name="RecognitionAttempt" Relationship="RepositoryModel.RecognitionAttemptRecognitionRequest" FromRole="RecognitionRequest" ToRole="RecognitionAttempt" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ExpectedResult" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Answer" Nullable="true" />
+          <Property Type="String" Name="FullAnswer" Nullable="true" />
+          <NavigationProperty Name="RecognitionRequest" Relationship="RepositoryModel.RecognitionRequestExpectedResult" FromRole="ExpectedResult" ToRole="RecognitionRequest" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="RecognitionRequestExpectedResult">
+          <End Type="RepositoryModel.RecognitionRequest" Role="RecognitionRequest" Multiplicity="1" />
+          <End Type="RepositoryModel.ExpectedResult" Role="ExpectedResult" Multiplicity="*" />
+        </Association>
+        <EntityType Name="RecognitionResult" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="Int32" Name="ResultDetail" Nullable="false" />
+          <Property Type="String" Name="Message" Nullable="true" />
+          <Property Type="Int32" Name="RecognitionTime" Nullable="false" />
+          <Property Type="Int32" Name="QueuedRecognitionTime" Nullable="false" />
+          <Property Type="String" Name="RecordedFileName" Nullable="true" />
+          <Property Type="String" Name="RecordedFileType" Nullable="true" />
+          <NavigationProperty Name="Sentence" Relationship="RepositoryModel.RecognitionResultSentenceMatch" FromRole="RecognitionResult" ToRole="SentenceMatch" />
+          <NavigationProperty Name="AudioMeasure" Relationship="RepositoryModel.RecognitionResultAudioQuality" FromRole="RecognitionResult" ToRole="AudioQuality" />
+          <NavigationProperty Name="RecognitionAttempt" Relationship="RepositoryModel.RecognitionAttemptRecognitionResult" FromRole="RecognitionResult" ToRole="RecognitionAttempt" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="AudioQuality" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Level" Nullable="false" />
+          <Property Type="Int32" Name="Truncation" Nullable="false" />
+          <Property Type="Single" Name="SignalNoiseRatio" Nullable="false" />
+          <Property Type="Int32" Name="NoiseLevel" Nullable="false" />
+          <Property Type="String" Name="Miscellany" Nullable="true" />
+          <NavigationProperty Name="RecognitionResult" Relationship="RepositoryModel.RecognitionResultAudioQuality" FromRole="AudioQuality" ToRole="RecognitionResult" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SentenceMatch" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="RecognizedText" Nullable="true" />
+          <Property Type="String" Name="Interpretation" Nullable="true" />
+          <Property Type="Int32" Name="MatchedIndex" Nullable="false" />
+          <NavigationProperty Name="Quality" Relationship="RepositoryModel.SentenceMatchSentenceQuality" FromRole="SentenceMatch" ToRole="SentenceQuality" />
+          <NavigationProperty Name="RecognitionResult" Relationship="RepositoryModel.RecognitionResultSentenceMatch" FromRole="SentenceMatch" ToRole="RecognitionResult" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SentenceQuality" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="FrameCount" Nullable="false" />
+          <Property Type="Int32" Name="Confidence" Nullable="false" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <NavigationProperty Name="Words" Relationship="RepositoryModel.SentenceQualityWordQuality" FromRole="SentenceQuality" ToRole="WordQuality" />
+          <Property Type="Int32" Name="PhraseConfidence" Nullable="false" />
+          <Property Type="Int32" Name="PhraseAcceptanceThreshold" Nullable="false" />
+          <Property Type="Int32" Name="SentenceAcceptanceThreshold" Nullable="false" />
+          <NavigationProperty Name="SentenceMatch" Relationship="RepositoryModel.SentenceMatchSentenceQuality" FromRole="SentenceQuality" ToRole="SentenceMatch" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="PhonemeQualities" Relationship="RepositoryModel.SentenceQualityPhonemeQuality" FromRole="SentenceQuality" ToRole="PhonemeQuality" />
+        </EntityType>
+        <EntityType Name="WordQuality" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="PhoneCount" Nullable="false" />
+          <Property Type="Int32" Name="StartFrame" Nullable="false" />
+          <Property Type="Int32" Name="EndFrame" Nullable="false" />
+          <Property Type="Int32" Name="FrameCount" Nullable="false" />
+          <Property Type="Int32" Name="Confidence" Nullable="false" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <Property Type="Boolean" Name="Accepted" Nullable="false" />
+          <NavigationProperty Name="SentenceQuality" Relationship="RepositoryModel.SentenceQualityWordQuality" FromRole="WordQuality" ToRole="SentenceQuality" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="SentenceQualityWordQuality">
+          <End Type="RepositoryModel.SentenceQuality" Role="SentenceQuality" Multiplicity="1" />
+          <End Type="RepositoryModel.WordQuality" Role="WordQuality" Multiplicity="*" />
+        </Association>
+        <Association Name="SentenceMatchSentenceQuality">
+          <End Type="RepositoryModel.SentenceMatch" Role="SentenceMatch" Multiplicity="1" />
+          <End Type="RepositoryModel.SentenceQuality" Role="SentenceQuality" Multiplicity="1" />
+        </Association>
+        <Association Name="RecognitionResultSentenceMatch">
+          <End Type="RepositoryModel.RecognitionResult" Role="RecognitionResult" Multiplicity="1" />
+          <End Type="RepositoryModel.SentenceMatch" Role="SentenceMatch" Multiplicity="1" />
+        </Association>
+        <Association Name="RecognitionResultAudioQuality">
+          <End Type="RepositoryModel.RecognitionResult" Role="RecognitionResult" Multiplicity="1" />
+          <End Type="RepositoryModel.AudioQuality" Role="AudioQuality" Multiplicity="1" />
+        </Association>
+        <EntityType Name="RecognitionAttempt" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <NavigationProperty Name="RecognitionRequest" Relationship="RepositoryModel.RecognitionAttemptRecognitionRequest" FromRole="RecognitionAttempt" ToRole="RecognitionRequest" />
+          <NavigationProperty Name="RecognitionResult" Relationship="RepositoryModel.RecognitionAttemptRecognitionResult" FromRole="RecognitionAttempt" ToRole="RecognitionResult" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EngineId" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="RepositoryModel.UserRecognitionAttempt" FromRole="RecognitionAttempt" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <Association Name="RecognitionAttemptRecognitionRequest">
+          <End Type="RepositoryModel.RecognitionAttempt" Role="RecognitionAttempt" Multiplicity="1" />
+          <End Type="RepositoryModel.RecognitionRequest" Role="RecognitionRequest" Multiplicity="1" />
+        </Association>
+        <Association Name="RecognitionAttemptRecognitionResult">
+          <End Type="RepositoryModel.RecognitionAttempt" Role="RecognitionAttempt" Multiplicity="1" />
+          <End Type="RepositoryModel.RecognitionResult" Role="RecognitionResult" Multiplicity="1" />
+        </Association>
+        <EntityType Name="PhonemeQuality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PhoneName" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="Grapheme" Nullable="false" MaxLength="4" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="RepositoryModel.UserPhonemeQuality" FromRole="PhonemeQuality" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="SentenceQuality" Relationship="RepositoryModel.SentenceQualityPhonemeQuality" FromRole="PhonemeQuality" ToRole="SentenceQuality" />
+          <Property Type="Int32" Name="SentenceQualityId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="RecognitionAttempts" Relationship="RepositoryModel.UserRecognitionAttempt" FromRole="User" ToRole="RecognitionAttempt" />
+          <NavigationProperty Name="PhonemeQualities" Relationship="RepositoryModel.UserPhonemeQuality" FromRole="User" ToRole="PhonemeQuality" />
+          <Property Type="String" Name="ClsUserId" Nullable="false" />
+        </EntityType>
+        <Association Name="UserRecognitionAttempt">
+          <End Type="RepositoryModel.User" Role="User" Multiplicity="1" />
+          <End Type="RepositoryModel.RecognitionAttempt" Role="RecognitionAttempt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RecognitionAttempt">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserPhonemeQuality">
+          <End Type="RepositoryModel.User" Role="User" Multiplicity="1" />
+          <End Type="RepositoryModel.PhonemeQuality" Role="PhonemeQuality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhonemeQuality">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SentenceQualityPhonemeQuality">
+          <End Type="RepositoryModel.SentenceQuality" Role="SentenceQuality" Multiplicity="1" />
+          <End Type="RepositoryModel.PhonemeQuality" Role="PhonemeQuality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SentenceQuality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhonemeQuality">
+              <PropertyRef Name="SentenceQualityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RepositoryModelStoreContainer" CdmEntityContainer="RepositoryModelContainer">
+    <EntitySetMapping Name="RecognitionRequests">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.RecognitionRequest)">
+        <MappingFragment StoreEntitySet="RecognitionRequests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RecognitionType" ColumnName="RecognitionType" />
+          <ScalarProperty Name="Grammar" ColumnName="Grammar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpectedResults">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.ExpectedResult)">
+        <MappingFragment StoreEntitySet="ExpectedResults">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="FullAnswer" ColumnName="FullAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecognitionResults">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.RecognitionResult)">
+        <MappingFragment StoreEntitySet="RecognitionResults">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ResultDetail" ColumnName="ResultDetail" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="RecognitionTime" ColumnName="RecognitionTime" />
+          <ScalarProperty Name="QueuedRecognitionTime" ColumnName="QueuedRecognitionTime" />
+          <ScalarProperty Name="RecordedFileName" ColumnName="RecordedFileName" />
+          <ScalarProperty Name="RecordedFileType" ColumnName="RecordedFileType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AudioQualities">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.AudioQuality)">
+        <MappingFragment StoreEntitySet="AudioQualities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Truncation" ColumnName="Truncation" />
+          <ScalarProperty Name="SignalNoiseRatio" ColumnName="SignalNoiseRatio" />
+          <ScalarProperty Name="NoiseLevel" ColumnName="NoiseLevel" />
+          <ScalarProperty Name="Miscellany" ColumnName="Miscellany" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SentenceMatches">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.SentenceMatch)">
+        <MappingFragment StoreEntitySet="SentenceMatches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RecognizedText" ColumnName="RecognizedText" />
+          <ScalarProperty Name="Interpretation" ColumnName="Interpretation" />
+          <ScalarProperty Name="MatchedIndex" ColumnName="MatchedIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SentenceQualities">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.SentenceQuality)">
+        <MappingFragment StoreEntitySet="SentenceQualities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FrameCount" ColumnName="FrameCount" />
+          <ScalarProperty Name="Confidence" ColumnName="Confidence" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="PhraseConfidence" ColumnName="PhraseConfidence" />
+          <ScalarProperty Name="PhraseAcceptanceThreshold" ColumnName="PhraseAcceptanceThreshold" />
+          <ScalarProperty Name="SentenceAcceptanceThreshold" ColumnName="SentenceAcceptanceThreshold" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WordQualities">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.WordQuality)">
+        <MappingFragment StoreEntitySet="WordQualities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PhoneCount" ColumnName="PhoneCount" />
+          <ScalarProperty Name="StartFrame" ColumnName="StartFrame" />
+          <ScalarProperty Name="EndFrame" ColumnName="EndFrame" />
+          <ScalarProperty Name="FrameCount" ColumnName="FrameCount" />
+          <ScalarProperty Name="Confidence" ColumnName="Confidence" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecognitionAttempts">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.RecognitionAttempt)">
+        <MappingFragment StoreEntitySet="RecognitionAttempts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EngineId" ColumnName="EngineId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhonemeQualities">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.PhonemeQuality)">
+        <MappingFragment StoreEntitySet="PhonemeQualities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PhoneName" ColumnName="PhoneName" />
+          <ScalarProperty Name="Grapheme" ColumnName="Grapheme" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SentenceQualityId" ColumnName="SentenceQualityId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(RepositoryModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClsUserId" ColumnName="ClsUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="RecognitionRequestExpectedResult" TypeName="RepositoryModel.RecognitionRequestExpectedResult" StoreEntitySet="ExpectedResults">
+      <EndProperty Name="RecognitionRequest">
+        <ScalarProperty Name="Id" ColumnName="RecognitionRequest_Id" />
+      </EndProperty>
+      <EndProperty Name="ExpectedResult">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SentenceQualityWordQuality" TypeName="RepositoryModel.SentenceQualityWordQuality" StoreEntitySet="WordQualities">
+      <EndProperty Name="SentenceQuality">
+        <ScalarProperty Name="Id" ColumnName="SentenceQuality_Id" />
+      </EndProperty>
+      <EndProperty Name="WordQuality">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SentenceMatchSentenceQuality" TypeName="RepositoryModel.SentenceMatchSentenceQuality" StoreEntitySet="SentenceMatches">
+      <EndProperty Name="SentenceQuality">
+        <ScalarProperty Name="Id" ColumnName="Quality_Id" />
+      </EndProperty>
+      <EndProperty Name="SentenceMatch">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RecognitionResultSentenceMatch" TypeName="RepositoryModel.RecognitionResultSentenceMatch" StoreEntitySet="RecognitionResults">
+      <EndProperty Name="SentenceMatch">
+        <ScalarProperty Name="Id" ColumnName="Sentence_Id" />
+      </EndProperty>
+      <EndProperty Name="RecognitionResult">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RecognitionResultAudioQuality" TypeName="RepositoryModel.RecognitionResultAudioQuality" StoreEntitySet="RecognitionResults">
+      <EndProperty Name="AudioQuality">
+        <ScalarProperty Name="Id" ColumnName="AudioMeasure_Id" />
+      </EndProperty>
+      <EndProperty Name="RecognitionResult">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RecognitionAttemptRecognitionRequest" TypeName="RepositoryModel.RecognitionAttemptRecognitionRequest" StoreEntitySet="RecognitionAttempts">
+      <EndProperty Name="RecognitionRequest">
+        <ScalarProperty Name="Id" ColumnName="RecognitionRequest_Id" />
+      </EndProperty>
+      <EndProperty Name="RecognitionAttempt">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RecognitionAttemptRecognitionResult" TypeName="RepositoryModel.RecognitionAttemptRecognitionResult" StoreEntitySet="RecognitionAttempts">
+      <EndProperty Name="RecognitionResult">
+        <ScalarProperty Name="Id" ColumnName="RecognitionResult_Id" />
+      </EndProperty>
+      <EndProperty Name="RecognitionAttempt">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="GetRecentPhonemes" FunctionName="RepositoryModel.Store.GetRecentPhonemes" />
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="RepositoryModel" >
+        <EntityTypeShape EntityType="RepositoryModel.RecognitionRequest" Width="1.875" PointX="7.125" PointY="0.5" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="RepositoryModel.ExpectedResult" Width="2.25" PointX="10" PointY="0.5" Height="1.787985026041667" />
+        <AssociationConnector Association="RepositoryModel.RecognitionRequestExpectedResult">
+          <ConnectorPoint PointX="9" PointY="1.3939925130208335" />
+          <ConnectorPoint PointX="10" PointY="1.3939925130208335" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RepositoryModel.RecognitionResult" Width="2" PointX="3.75" PointY="3.125" Height="3.1340950520833326" />
+        <EntityTypeShape EntityType="RepositoryModel.AudioQuality" Width="1.875" PointX="7.125" PointY="3.125" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="RepositoryModel.SentenceMatch" Width="1.875" PointX="3.75" PointY="7" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="RepositoryModel.SentenceQuality" Width="2.25" PointX="7.125" PointY="7" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="RepositoryModel.WordQuality" Width="2" PointX="10.25" PointY="7" Height="2.7494921874999996" />
+        <AssociationConnector Association="RepositoryModel.SentenceQualityWordQuality">
+          <ConnectorPoint PointX="9.375" PointY="8.37474609375" />
+          <ConnectorPoint PointX="10.25" PointY="8.37474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="RepositoryModel.SentenceMatchSentenceQuality">
+          <ConnectorPoint PointX="5.625" PointY="8.0862939453125" />
+          <ConnectorPoint PointX="7.125" PointY="8.0862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="RepositoryModel.RecognitionResultSentenceMatch">
+          <ConnectorPoint PointX="4.6875" PointY="6.2590950520833326" />
+          <ConnectorPoint PointX="4.6875" PointY="7" />
+        </AssociationConnector>
+        <AssociationConnector Association="RepositoryModel.RecognitionResultAudioQuality">
+          <ConnectorPoint PointX="5.75" PointY="4.3074446614583337" />
+          <ConnectorPoint PointX="7.125" PointY="4.3074446614583337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RepositoryModel.RecognitionAttempt" Width="2" PointX="3.75" PointY="0.5" Height="1.7879850260416665" />
+        <AssociationConnector Association="RepositoryModel.RecognitionAttemptRecognitionRequest">
+          <ConnectorPoint PointX="5.75" PointY="1.3939925130208333" />
+          <ConnectorPoint PointX="7.125" PointY="1.3939925130208333" />
+        </AssociationConnector>
+        <AssociationConnector Association="RepositoryModel.RecognitionAttemptRecognitionResult">
+          <ConnectorPoint PointX="4.75" PointY="2.672587890625" />
+          <ConnectorPoint PointX="4.75" PointY="3.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RepositoryModel.PhonemeQuality" Width="2" PointX="0.5" PointY="8.625" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="RepositoryModel.User" Width="1.5" PointX="0.5" PointY="0.5" Height="1.7879850260416665" />
+        <AssociationConnector Association="RepositoryModel.UserRecognitionAttempt">
+          <ConnectorPoint PointX="2" PointY="1.3939925130208333" />
+          <ConnectorPoint PointX="3.75" PointY="1.3939925130208333" />
+        </AssociationConnector>
+        <AssociationConnector Association="RepositoryModel.UserPhonemeQuality" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.25" PointY="2.2879850260416665" />
+          <ConnectorPoint PointX="1.25" PointY="8.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="RepositoryModel.SentenceQualityPhonemeQuality">
+          <ConnectorPoint PointX="7.125" PointY="9.5884407552083335" />
+          <ConnectorPoint PointX="2.5" PointY="9.5884407552083335" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

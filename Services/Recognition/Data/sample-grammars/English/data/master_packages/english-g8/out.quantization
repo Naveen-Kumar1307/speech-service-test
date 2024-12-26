@@ -1,0 +1,1038 @@
+ -- Reading the mixtures --
+Undertrained, Skipping 181:03: 0
+Undertrained, Skipping 348:01: 0
+Undertrained, Skipping 443:30: 0
+Undertrained, Skipping 629:09: 0
+Undertrained, Skipping 629:18: 0
+Undertrained, Skipping 731:00: 0
+Undertrained, Skipping 845:07: 0
+Undertrained, Skipping 845:15: 0
+  0: mean      -21294.918  dist  1.06068075e+20 count    806760
+Pass   1: Total distortion =  1.06068075e+20, iterations =     1
+Pass   2: Total distortion =  4.38069666e+19, iterations =     3
+Pass   3: Total distortion =  4.02713958e+09, iterations =     6
+Pass   4: Total distortion =  2.45058573e+09, iterations =    15
+Pass   5: Total distortion =  2.41948165e+09, iterations =    17
+Pass   6: Total distortion =       686897658, iterations =    22
+Pass   7: Total distortion =       371429568, iterations =    24
+Pass   8: Total distortion =       177020886, iterations =    26
+Pass   9: Total distortion =       107086679, iterations =    28
+Pass  10: Total distortion =      84178670.9, iterations =    30
+Pass  11: Total distortion =      63084043.1, iterations =    32
+Pass  12: Total distortion =      50337668.8, iterations =    34
+Pass  13: Total distortion =      38416867.7, iterations =    36
+Pass  14: Total distortion =      26637192.5, iterations =    38
+Pass  15: Total distortion =        20976853, iterations =    40
+Pass  16: Total distortion =      16912607.7, iterations =    42
+Pass  17: Total distortion =      13709509.3, iterations =    44
+Pass  18: Total distortion =      10487587.1, iterations =    46
+Pass  19: Total distortion =      8945329.39, iterations =    48
+Pass  20: Total distortion =      7735508.35, iterations =    50
+Pass  21: Total distortion =      6561587.85, iterations =    52
+Pass  22: Total distortion =      5721437.15, iterations =    54
+Pass  23: Total distortion =       5083089.8, iterations =    56
+Pass  24: Total distortion =      4354527.03, iterations =    58
+Pass  25: Total distortion =      4029258.16, iterations =    75
+Pass  26: Total distortion =      3588597.25, iterations =    77
+Pass  27: Total distortion =      3185972.39, iterations =    79
+Pass  28: Total distortion =      2820225.58, iterations =    81
+Pass  29: Total distortion =      2554264.99, iterations =    83
+Pass  30: Total distortion =      2420765.47, iterations =    93
+Pass  31: Total distortion =       2150021.4, iterations =    95
+Pass  32: Total distortion =      1994067.98, iterations =    97
+Pass  33: Total distortion =      1818048.56, iterations =    99
+Pass  34: Total distortion =      1700786.38, iterations =   101
+Pass  35: Total distortion =      1566709.94, iterations =   103
+Pass  36: Total distortion =      1506162.65, iterations =   136
+Pass  37: Total distortion =      1343786.62, iterations =   138
+Pass  38: Total distortion =      1305679.76, iterations =   156
+Pass  39: Total distortion =      1281783.46, iterations =   192
+Pass  40: Total distortion =      1266745.21, iterations =   218
+Pass  41: Total distortion =       1255925.2, iterations =   263
+Pass  42: Total distortion =      1153212.17, iterations =   275
+Pass  43: Total distortion =      1046957.49, iterations =   277
+Pass  44: Total distortion =      966308.226, iterations =   279
+Pass  45: Total distortion =      882783.058, iterations =   281
+Pass  46: Total distortion =      809580.346, iterations =   283
+Pass  47: Total distortion =      747636.939, iterations =   285
+Pass  48: Total distortion =      685188.271, iterations =   287
+Pass  49: Total distortion =      631352.261, iterations =   289
+Pass  50: Total distortion =      559108.955, iterations =   291
+Pass  51: Total distortion =      500634.751, iterations =   293
+Pass  52: Total distortion =      441809.887, iterations =   295
+Pass  53: Total distortion =      349335.811, iterations =   297
+Pass  54: Total distortion =       300689.17, iterations =   299
+Pass  55: Total distortion =      277535.193, iterations =   301
+Pass  56: Total distortion =      249523.188, iterations =   303
+Pass  57: Total distortion =       225547.79, iterations =   305
+Pass  58: Total distortion =      205393.912, iterations =   307
+Pass  59: Total distortion =      201057.819, iterations =   309
+Pass  60: Total distortion =       195664.93, iterations =   311
+Pass  61: Total distortion =      180704.472, iterations =   326
+Pass  62: Total distortion =      168253.002, iterations =   328
+Pass  63: Total distortion =      155517.691, iterations =   330
+Pass  64: Total distortion =      153130.803, iterations =   332
+Pass  65: Total distortion =       141854.61, iterations =   334
+Pass  66: Total distortion =      130385.525, iterations =   336
+Pass  67: Total distortion =      119932.597, iterations =   338
+Pass  68: Total distortion =      113291.178, iterations =   347
+Pass  69: Total distortion =      104468.862, iterations =   349
+Pass  70: Total distortion =      96790.9675, iterations =   351
+Pass  71: Total distortion =      90131.6239, iterations =   353
+Pass  72: Total distortion =      83275.2402, iterations =   355
+Pass  73: Total distortion =      78465.2748, iterations =   357
+Pass  74: Total distortion =      74411.9385, iterations =   359
+Pass  75: Total distortion =        70234.82, iterations =   361
+Pass  76: Total distortion =      68160.8457, iterations =   363
+Pass  77: Total distortion =       65095.514, iterations =   365
+Pass  78: Total distortion =      61240.6086, iterations =   367
+Pass  79: Total distortion =      57540.5083, iterations =   369
+Pass  80: Total distortion =      54047.0175, iterations =   371
+Pass  81: Total distortion =      51393.0389, iterations =   373
+Pass  82: Total distortion =      48378.4981, iterations =   375
+Pass  83: Total distortion =      45107.6396, iterations =   377
+Pass  84: Total distortion =      41930.1171, iterations =   379
+Pass  85: Total distortion =      40369.7006, iterations =   381
+Pass  86: Total distortion =      38153.4764, iterations =   391
+Pass  87: Total distortion =      36150.4941, iterations =   393
+Pass  88: Total distortion =      33872.4847, iterations =   395
+Pass  89: Total distortion =      32192.8298, iterations =   397
+Pass  90: Total distortion =      31296.0968, iterations =   399
+Pass  91: Total distortion =      29402.3396, iterations =   401
+Pass  92: Total distortion =      27503.7653, iterations =   403
+Pass  93: Total distortion =       26026.407, iterations =   405
+Pass  94: Total distortion =      24850.6715, iterations =   407
+Pass  95: Total distortion =       22412.992, iterations =   417
+Pass  96: Total distortion =       21174.677, iterations =   419
+Pass  97: Total distortion =      20114.4395, iterations =   421
+Pass  98: Total distortion =      19113.6652, iterations =   423
+Pass  99: Total distortion =      18603.1533, iterations =   425
+Pass 100: Total distortion =       17640.084, iterations =   427
+Pass 101: Total distortion =      16944.7646, iterations =   429
+Pass 102: Total distortion =      16011.0568, iterations =   431
+Pass 103: Total distortion =      15188.0446, iterations =   433
+Pass 104: Total distortion =      13995.0679, iterations =   443
+Pass 105: Total distortion =      13381.4113, iterations =   445
+Pass 106: Total distortion =      12848.2331, iterations =   447
+Pass 107: Total distortion =       12180.179, iterations =   449
+Pass 108: Total distortion =      11622.9184, iterations =   451
+Pass 109: Total distortion =      11130.5872, iterations =   453
+Pass 110: Total distortion =      10741.6801, iterations =   455
+Pass 111: Total distortion =      10248.4163, iterations =   457
+Pass 112: Total distortion =      9572.29823, iterations =   463
+Pass 113: Total distortion =       9207.4797, iterations =   465
+Pass 114: Total distortion =      8911.21004, iterations =   467
+Pass 115: Total distortion =      8468.48009, iterations =   469
+Pass 116: Total distortion =      8055.02913, iterations =   471
+Pass 117: Total distortion =      7421.91477, iterations =   480
+Pass 118: Total distortion =      7053.69546, iterations =   482
+Pass 119: Total distortion =      6859.90513, iterations =   484
+Pass 120: Total distortion =      6620.49465, iterations =   486
+Pass 121: Total distortion =      6152.40632, iterations =   493
+Pass 122: Total distortion =      5975.32783, iterations =   495
+Pass 123: Total distortion =       5542.3015, iterations =   504
+Pass 124: Total distortion =      5316.88625, iterations =   506
+Pass 125: Total distortion =       5122.7665, iterations =   508
+Pass 126: Total distortion =      4888.03587, iterations =   512
+Pass 127: Total distortion =       4631.0838, iterations =   517
+Pass 128: Total distortion =      4470.51694, iterations =   519
+Pass 129: Total distortion =      4332.18664, iterations =   521
+Pass 130: Total distortion =      4068.48873, iterations =   529
+Pass 131: Total distortion =      3916.62625, iterations =   531
+Pass 132: Total distortion =      3771.42165, iterations =   533
+Pass 133: Total distortion =      3643.40091, iterations =   535
+Pass 134: Total distortion =      3516.38229, iterations =   537
+Pass 135: Total distortion =      3337.91612, iterations =   544
+Pass 136: Total distortion =      3227.00665, iterations =   546
+Pass 137: Total distortion =       3129.5458, iterations =   548
+Pass 138: Total distortion =      3034.72976, iterations =   550
+Pass 139: Total distortion =      2917.93265, iterations =   553
+Pass 140: Total distortion =      2818.89036, iterations =   555
+Pass 141: Total distortion =      2676.68952, iterations =   563
+Pass 142: Total distortion =      2598.77018, iterations =   565
+Pass 143: Total distortion =      2479.51853, iterations =   569
+Pass 144: Total distortion =      2404.13797, iterations =   571
+Pass 145: Total distortion =      2299.41209, iterations =   577
+Pass 146: Total distortion =      2233.11371, iterations =   579
+Pass 147: Total distortion =      2139.54563, iterations =   586
+Pass 148: Total distortion =      2076.01983, iterations =   588
+Pass 149: Total distortion =      2012.23984, iterations =   590
+Pass 150: Total distortion =      1949.09321, iterations =   592
+Pass 151: Total distortion =      1879.63024, iterations =   595
+Pass 152: Total distortion =      1811.75903, iterations =   597
+Pass 153: Total distortion =       1760.6762, iterations =   599
+Pass 154: Total distortion =       1706.8109, iterations =   601
+Pass 155: Total distortion =      1623.47849, iterations =   609
+Pass 156: Total distortion =       1575.1224, iterations =   611
+Pass 157: Total distortion =      1522.77175, iterations =   613
+Pass 158: Total distortion =      1452.98677, iterations =   617
+Pass 159: Total distortion =      1409.51368, iterations =   619
+Pass 160: Total distortion =      1365.52639, iterations =   621
+Pass 161: Total distortion =      1307.44168, iterations =   625
+Pass 162: Total distortion =      1255.08573, iterations =   631
+Pass 163: Total distortion =      1221.89971, iterations =   633
+Pass 164: Total distortion =      1172.78624, iterations =   639
+Pass 165: Total distortion =      1139.50815, iterations =   642
+Pass 166: Total distortion =      1109.95207, iterations =   644
+Pass 167: Total distortion =      1077.46577, iterations =   646
+Pass 168: Total distortion =      1044.48577, iterations =   648
+Pass 169: Total distortion =      1004.97291, iterations =   652
+Pass 170: Total distortion =      970.878448, iterations =   657
+Pass 171: Total distortion =      953.820772, iterations =   659
+Pass 172: Total distortion =      933.661795, iterations =   661
+Pass 173: Total distortion =       905.49397, iterations =   666
+Pass 174: Total distortion =      885.564806, iterations =   668
+Pass 175: Total distortion =      870.089533, iterations =   670
+Pass 176: Total distortion =      854.674054, iterations =   672
+Pass 177: Total distortion =      831.796467, iterations =   675
+Pass 178: Total distortion =      805.048899, iterations =   680
+Pass 179: Total distortion =      783.526096, iterations =   683
+Pass 180: Total distortion =      765.609942, iterations =   685
+Pass 181: Total distortion =      751.229614, iterations =   687
+Pass 182: Total distortion =      734.716461, iterations =   689
+Pass 183: Total distortion =      717.939813, iterations =   691
+Pass 184: Total distortion =      705.513346, iterations =   693
+Pass 185: Total distortion =      686.838422, iterations =   695
+Pass 186: Total distortion =      668.627641, iterations =   697
+Pass 187: Total distortion =      649.357433, iterations =   700
+Pass 188: Total distortion =      633.854316, iterations =   702
+Pass 189: Total distortion =      618.629093, iterations =   704
+Pass 190: Total distortion =       599.19979, iterations =   708
+Pass 191: Total distortion =      580.845419, iterations =   713
+Pass 192: Total distortion =      564.950644, iterations =   718
+Pass 193: Total distortion =      556.100185, iterations =   720
+Pass 194: Total distortion =      542.402642, iterations =   724
+Pass 195: Total distortion =      529.780773, iterations =   727
+Pass 196: Total distortion =      517.686555, iterations =   730
+Pass 197: Total distortion =      508.915812, iterations =   732
+Pass 198: Total distortion =      498.092504, iterations =   734
+Pass 199: Total distortion =      488.750911, iterations =   736
+Pass 200: Total distortion =      478.117072, iterations =   738
+Pass 201: Total distortion =      464.437579, iterations =   741
+Pass 202: Total distortion =       454.17908, iterations =   743
+Pass 203: Total distortion =       443.27504, iterations =   745
+Pass 204: Total distortion =      432.582486, iterations =   747
+Pass 205: Total distortion =      423.982252, iterations =   749
+Pass 206: Total distortion =      414.715362, iterations =   751
+Pass 207: Total distortion =      406.722218, iterations =   753
+Pass 208: Total distortion =      397.036918, iterations =   756
+Pass 209: Total distortion =       388.02233, iterations =   759
+Pass 210: Total distortion =         377.475, iterations =   764
+Pass 211: Total distortion =      371.364366, iterations =   766
+Pass 212: Total distortion =      361.389621, iterations =   771
+Pass 213: Total distortion =      353.645951, iterations =   775
+Pass 214: Total distortion =      347.213123, iterations =   778
+Pass 215: Total distortion =      341.462557, iterations =   780
+Pass 216: Total distortion =       335.05119, iterations =   782
+Pass 217: Total distortion =      327.912883, iterations =   785
+Pass 218: Total distortion =       322.90548, iterations =   787
+Pass 219: Total distortion =      317.667143, iterations =   789
+Pass 220: Total distortion =      312.240071, iterations =   791
+Pass 221: Total distortion =      308.155967, iterations =   793
+Pass 222: Total distortion =       303.47197, iterations =   795
+Pass 223: Total distortion =      298.307062, iterations =   797
+Pass 224: Total distortion =      292.222815, iterations =   800
+Pass 225: Total distortion =      287.896858, iterations =   802
+Pass 226: Total distortion =      284.026266, iterations =   804
+Pass 227: Total distortion =      278.794442, iterations =   807
+Pass 228: Total distortion =      272.910119, iterations =   812
+Pass 229: Total distortion =      269.059769, iterations =   814
+Pass 230: Total distortion =       265.98534, iterations =   816
+Pass 231: Total distortion =      262.208089, iterations =   818
+Pass 232: Total distortion =       257.98846, iterations =   820
+Pass 233: Total distortion =      254.242131, iterations =   822
+Pass 234: Total distortion =      250.245024, iterations =   824
+Pass 235: Total distortion =      246.086585, iterations =   826
+Pass 236: Total distortion =      242.020092, iterations =   828
+Pass 237: Total distortion =      237.944045, iterations =   830
+Pass 238: Total distortion =      233.545937, iterations =   833
+Pass 239: Total distortion =      230.677896, iterations =   835
+Pass 240: Total distortion =      227.664802, iterations =   837
+Pass 241: Total distortion =      224.509249, iterations =   839
+Pass 242: Total distortion =      221.436555, iterations =   841
+Pass 243: Total distortion =       217.33103, iterations =   844
+Pass 244: Total distortion =      214.021866, iterations =   846
+Pass 245: Total distortion =      210.536043, iterations =   848
+Pass 246: Total distortion =      206.370295, iterations =   852
+Pass 247: Total distortion =      204.040188, iterations =   854
+Pass 248: Total distortion =      201.167929, iterations =   856
+Pass 249: Total distortion =      198.743601, iterations =   858
+Pass 250: Total distortion =      195.961552, iterations =   860
+Pass 251: Total distortion =      192.474607, iterations =   863
+Pass 252: Total distortion =      189.430776, iterations =   866
+Pass 253: Total distortion =       186.86155, iterations =   868
+Pass 254: Total distortion =      184.167544, iterations =   870
+Pass 255: Total distortion =      181.323184, iterations =   872
+Pass 256: Total distortion =      177.949003, iterations =   876
+  0: mean -1.07374182e+09  dist               0 count        54
+  1: mean     -20113.3027  dist               0 count         1
+  2: mean      -17262.252  dist               0 count         1
+  3: mean     -15883.7041  dist               0 count         1
+  4: mean     -14351.4375  dist               0 count         1
+  5: mean     -9577.81445  dist               0 count         1
+  6: mean     -8867.37598  dist               0 count         1
+  7: mean     -8806.91211  dist               0 count         1
+  8: mean     -7480.84521  dist               0 count         1
+  9: mean     -7224.69775  dist               0 count         1
+ 10: mean     -7196.77686  dist               0 count         1
+ 11: mean     -6787.96924  dist               0 count         1
+ 12: mean     -6716.76758  dist               0 count         1
+ 13: mean      -6701.4248  dist               0 count         1
+ 14: mean     -6350.41553  dist               0 count         1
+ 15: mean     -6312.04297  dist               0 count         1
+ 16: mean     -6269.45996  dist               0 count         1
+ 17: mean     -5392.23877  dist               0 count         1
+ 18: mean     -5348.26855  dist               0 count         1
+ 19: mean     -5189.06445  dist               0 count         1
+ 20: mean     -5124.54639  dist               0 count         1
+ 21: mean     -5115.66699  dist               0 count         1
+ 22: mean     -4748.29053  dist               0 count         1
+ 23: mean      -4490.3501  dist               0 count         1
+ 24: mean      -4415.1958  dist               0 count         1
+ 25: mean     -4366.42383  dist               0 count         1
+ 26: mean        -4238.25  dist               0 count         1
+ 27: mean     -4223.71777  dist               0 count         1
+ 28: mean     -4160.03516  dist               0 count         1
+ 29: mean     -4025.38184  dist               0 count         1
+ 30: mean     -3866.06372  dist               0 count         1
+ 31: mean     -3631.82568  dist               0 count         1
+ 32: mean     -3488.06494  dist               0 count         1
+ 33: mean     -3348.70215  dist               0 count         1
+ 34: mean     -3337.60522  dist               0 count         1
+ 35: mean     -3320.47998  dist               0 count         1
+ 36: mean     -3234.36865  dist               0 count         1
+ 37: mean     -3213.97266  dist               0 count         1
+ 38: mean      -3177.0083  dist               0 count         1
+ 39: mean     -3163.43384  dist               0 count         1
+ 40: mean     -3034.89331  dist               0 count         1
+ 41: mean     -2955.07593  dist               0 count         1
+ 42: mean     -2945.55859  dist               0 count         1
+ 43: mean     -2913.04004  dist               0 count         1
+ 44: mean     -2886.39429  dist               0 count         1
+ 45: mean     -2763.42358  dist               0 count         1
+ 46: mean     -2593.39087  dist               0 count         1
+ 47: mean     -2562.46704  dist               0 count         1
+ 48: mean     -2528.34912  dist               0 count         1
+ 49: mean     -2227.74902  dist               0 count         1
+ 50: mean     -66.2516861  dist               0 count         1
+ 51: mean     -54.3874626  dist               0 count         1
+ 52: mean     -48.3451118  dist               0 count         1
+ 53: mean     -36.5904007  dist               0 count         1
+ 54: mean     -31.4959717  dist     0.351356119 count         3
+ 55: mean     -28.8694191  dist     0.774994552 count         2
+ 56: mean     -27.0774136  dist    0.0010617543 count         2
+ 57: mean     -20.6998692  dist      1.27136135 count         3
+ 58: mean     -16.2639618  dist     0.692005873 count         3
+ 59: mean     -14.3647795  dist     0.238544866 count         4
+ 60: mean     -13.3060284  dist     0.616201818 count         4
+ 61: mean     -11.7548265  dist     0.135617748 count         3
+ 62: mean     -10.6900959  dist     0.123310506 count         7
+ 63: mean     -9.58576775  dist      1.06523895 count         9
+ 64: mean     -8.08151817  dist      1.66551006 count        20
+ 65: mean     -7.25117207  dist       1.0950768 count        23
+ 66: mean     -6.57348776  dist     0.710606456 count        39
+ 67: mean     -6.13573074  dist     0.538802862 count        50
+ 68: mean     -5.76057482  dist     0.828973174 count        89
+ 69: mean      -5.4531002  dist     0.986032546 count       155
+ 70: mean     -5.18457222  dist      1.08720028 count       231
+ 71: mean     -4.95220709  dist     0.993997455 count       262
+ 72: mean     -4.74767017  dist       1.2965951 count       369
+ 73: mean     -4.53859711  dist      1.62023091 count       456
+ 74: mean     -4.35039091  dist      1.29811478 count       437
+ 75: mean     -4.14637423  dist      1.34399271 count       476
+ 76: mean     -3.96728754  dist      1.24658167 count       452
+ 77: mean     -3.78842115  dist      1.06644976 count       421
+ 78: mean     -3.61047149  dist      1.20885324 count       474
+ 79: mean     -3.43135953  dist      1.37887108 count       545
+ 80: mean     -3.26355815  dist       1.3081913 count       614
+ 81: mean      -3.1130631  dist      1.17229354 count       714
+ 82: mean     -2.97320056  dist       1.2148788 count       796
+ 83: mean     -2.84107518  dist      1.27027285 count       908
+ 84: mean     -2.71285272  dist       1.3264538 count      1033
+ 85: mean     -2.59457803  dist      1.27166677 count      1089
+ 86: mean      -2.4759481  dist      1.41834795 count      1285
+ 87: mean     -2.36384535  dist      1.31140697 count      1340
+ 88: mean      -2.2610333  dist      1.11993802 count      1422
+ 89: mean     -2.16792321  dist      1.01226056 count      1570
+ 90: mean     -2.08242464  dist       1.0430423 count      1771
+ 91: mean      -1.9990375  dist      1.15325582 count      2055
+ 92: mean     -1.91621697  dist      1.25203335 count      2241
+ 93: mean     -1.83445609  dist      1.46648431 count      2680
+ 94: mean     -1.75332201  dist      1.69212699 count      3163
+ 95: mean     -1.67478025  dist      1.79368651 count      3485
+ 96: mean     -1.59682834  dist      1.74766219 count      3805
+ 97: mean     -1.52521956  dist      1.64122248 count      4173
+ 98: mean     -1.45807421  dist      1.61466527 count      4505
+ 99: mean     -1.39312696  dist      1.62598157 count      4955
+100: mean     -1.33130908  dist      1.55105197 count      5049
+101: mean     -1.27137923  dist      1.61152172 count      5749
+102: mean     -1.21389079  dist       1.5354923 count      5843
+103: mean     -1.15865159  dist      1.58182633 count      6380
+104: mean     -1.10470867  dist      1.57592332 count      6650
+105: mean      -1.0529772  dist      1.59099293 count      7212
+106: mean     -1.00181007  dist      1.61213934 count      7650
+107: mean    -0.951569021  dist      1.61626017 count      7949
+108: mean    -0.902909696  dist      1.68694699 count      8464
+109: mean    -0.854594767  dist      1.64806426 count      8775
+110: mean    -0.807203114  dist      1.72585809 count      9335
+111: mean    -0.760487556  dist      1.68394601 count      9604
+112: mean    -0.715605736  dist      1.65478027 count     10038
+113: mean    -0.671016157  dist      1.64070213 count     10421
+114: mean    -0.628483415  dist      1.50616324 count     10374
+115: mean    -0.587972343  dist      1.30699694 count     10287
+116: mean    -0.550621569  dist      1.07615769 count     10000
+117: mean    -0.515796542  dist     0.921802223 count      9817
+118: mean     -0.48225069  dist     0.879779458 count      9726
+119: mean    -0.448957175  dist      1.03510773 count     10877
+120: mean    -0.414690226  dist      1.15009499 count     11625
+121: mean    -0.380314857  dist      1.22619522 count     12315
+122: mean    -0.346101612  dist      1.21103477 count     12630
+123: mean    -0.313393414  dist      1.06577921 count     12545
+124: mean    -0.282109052  dist      1.00181913 count     12756
+125: mean    -0.251760215  dist     0.955218136 count     12899
+126: mean    -0.221890733  dist      0.96980387 count     13331
+127: mean    -0.192111567  dist      1.04997075 count     13959
+128: mean    -0.161609814  dist       1.1797775 count     14785
+129: mean    -0.130511895  dist       1.2860918 count     15740
+130: mean   -0.0992235243  dist       1.3654964 count     16599
+131: mean   -0.0682976022  dist      1.23946393 count     16236
+132: mean   -0.0392461717  dist      1.01498103 count     15726
+133: mean   -0.0124895228  dist     0.800917745 count     14722
+134: mean    0.0129964072  dist     0.798937321 count     14627
+135: mean    0.0397472382  dist     0.988378644 count     15560
+136: mean    0.0686360598  dist      1.22245312 count     16327
+137: mean    0.0995097607  dist      1.41565692 count     16547
+138: mean      0.13174361  dist       1.3970443 count     16080
+139: mean      0.16418761  dist      1.38741732 count     15635
+140: mean     0.197080031  dist       1.3561362 count     15212
+141: mean     0.230200559  dist      1.36827362 count     14637
+142: mean     0.263795763  dist       1.3502773 count     14192
+143: mean     0.298113614  dist      1.35866082 count     13733
+144: mean     0.332867384  dist      1.35014939 count     13248
+145: mean     0.368533731  dist      1.41514373 count     13029
+146: mean     0.405021578  dist      1.41705322 count     12789
+147: mean     0.441859126  dist      1.40878594 count     12109
+148: mean     0.479431808  dist      1.39624715 count     11758
+149: mean     0.517530799  dist      1.42053127 count     11474
+150: mean     0.556797445  dist      1.45478964 count     11117
+151: mean     0.596641123  dist      1.40629447 count     10429
+152: mean     0.637762725  dist      1.53731596 count     10594
+153: mean     0.680168152  dist      1.57380569 count     10049
+154: mean     0.724122345  dist      1.52304554 count      9462
+155: mean     0.768552661  dist      1.55182445 count      9233
+156: mean     0.814327776  dist      1.48424029 count      8547
+157: mean     0.859927833  dist      1.43202496 count      8056
+158: mean     0.907021582  dist      1.47059548 count      7803
+159: mean     0.955695093  dist      1.46690416 count      7300
+160: mean      1.00524688  dist      1.37131619 count      6738
+161: mean      1.05541205  dist      1.38475955 count      6277
+162: mean      1.10732555  dist      1.31828952 count      5777
+163: mean      1.16035318  dist      1.33332527 count      5530
+164: mean      1.21536148  dist      1.28975272 count      4976
+165: mean      1.27202857  dist      1.33839774 count      4713
+166: mean       1.3318789  dist      1.34368801 count      4348
+167: mean       1.3944838  dist      1.31725216 count      3982
+168: mean      1.45893133  dist      1.34079838 count      3683
+169: mean      1.52680361  dist       1.4856441 count      3541
+170: mean       1.6010282  dist       1.4320029 count      3148
+171: mean       1.6770035  dist      1.45828712 count      2826
+172: mean      1.75839961  dist      1.49432099 count      2540
+173: mean       1.8469702  dist      1.61592865 count      2190
+174: mean       1.9447763  dist      1.72985184 count      2029
+175: mean      2.04849553  dist      1.75954616 count      1836
+176: mean      2.16195464  dist      1.78203332 count      1547
+177: mean      2.28061199  dist      1.60429406 count      1294
+178: mean      2.40373015  dist      1.41626859 count      1045
+179: mean      2.53455806  dist      1.45565832 count       950
+180: mean      2.67110872  dist      1.17088044 count       796
+181: mean      2.81103134  dist      1.18311453 count       653
+182: mean      2.96978283  dist      1.20969391 count       585
+183: mean      3.12959146  dist      1.07290018 count       497
+184: mean      3.30024981  dist       1.1861341 count       421
+185: mean      3.50948119  dist       1.3435632 count       336
+186: mean      3.74869919  dist     0.992170811 count       212
+187: mean      4.02665186  dist      1.03616226 count       144
+188: mean       4.3224926  dist     0.836355388 count        95
+189: mean       4.7316494  dist     0.439834952 count        29
+190: mean      5.39690638  dist     0.416736901 count        13
+191: mean      6.03844643  dist     0.320133239 count        12
+192: mean      7.14066172  dist       1.5807234 count        12
+193: mean      8.80065346  dist     0.880122185 count         7
+194: mean       10.017437  dist     0.189126998 count         4
+195: mean      11.2818899  dist     0.124813549 count         3
+196: mean      12.4042282  dist     0.211292207 count         3
+197: mean       14.038435  dist     0.393940896 count         4
+198: mean      16.7077045  dist               0 count         1
+199: mean      19.1711617  dist    0.0295189451 count         2
+200: mean      21.9804688  dist     0.430883646 count         2
+201: mean      27.3071308  dist      1.35440469 count         3
+202: mean      37.3427353  dist               0 count         1
+203: mean      65.0377808  dist               0 count         1
+204: mean      131.582382  dist               0 count         1
+205: mean      171.626389  dist               0 count         1
+206: mean      258.495239  dist               0 count         1
+207: mean      2179.58325  dist               0 count         1
+208: mean      2263.79517  dist               0 count         1
+209: mean      2527.70679  dist               0 count         1
+210: mean      3213.51147  dist               0 count         1
+211: mean      3223.69702  dist               0 count         1
+212: mean      3356.18652  dist               0 count         1
+213: mean      3382.50854  dist               0 count         1
+214: mean      3384.76465  dist               0 count         1
+215: mean      3463.18359  dist               0 count         1
+216: mean      3476.88257  dist               0 count         1
+217: mean      3569.38818  dist               0 count         1
+218: mean      3636.13013  dist               0 count         1
+219: mean      3704.32227  dist               0 count         1
+220: mean      3835.89258  dist               0 count         1
+221: mean      3998.01318  dist               0 count         1
+222: mean      4039.62061  dist               0 count         1
+223: mean      4058.72803  dist               0 count         1
+224: mean      4282.15674  dist               0 count         1
+225: mean      4342.61328  dist               0 count         1
+226: mean      4376.97803  dist               0 count         1
+227: mean       4544.7627  dist               0 count         1
+228: mean      4550.03174  dist               0 count         1
+229: mean      4572.72607  dist               0 count         1
+230: mean      4635.19824  dist               0 count         1
+231: mean      4646.73242  dist               0 count         1
+232: mean      4668.87207  dist               0 count         1
+233: mean      4745.53809  dist               0 count         1
+234: mean      5032.40625  dist               0 count         1
+235: mean      5077.05566  dist               0 count         1
+236: mean      5118.84131  dist               0 count         1
+237: mean      5388.46533  dist               0 count         1
+238: mean      5569.84912  dist               0 count         1
+239: mean      5615.05762  dist               0 count         1
+240: mean       5676.5835  dist               0 count         1
+241: mean      5742.18848  dist               0 count         1
+242: mean      5747.32031  dist               0 count         1
+243: mean      6024.63135  dist               0 count         1
+244: mean      6175.08105  dist               0 count         1
+245: mean       6447.5874  dist               0 count         1
+246: mean      6904.86572  dist               0 count         1
+247: mean      7242.19092  dist               0 count         1
+248: mean      7328.23682  dist               0 count         1
+249: mean      7608.49512  dist               0 count         1
+250: mean      9832.97754  dist               0 count         1
+251: mean      10293.8457  dist               0 count         1
+252: mean      12678.4707  dist               0 count         1
+253: mean      13284.5781  dist               0 count         1
+254: mean      13626.5244  dist               0 count         1
+255: mean  1.07374182e+09  dist               0 count        38
+Pass 256: Total distortion =       177.67552, iterations =   878
+  0: mean     0.230418697  dist       135877856 count    806760
+Pass   1: Total distortion =       135877856, iterations =     1
+Pass   2: Total distortion =        12300449, iterations =     3
+Pass   3: Total distortion =      1629095.71, iterations =     5
+Pass   4: Total distortion =      878826.971, iterations =     7
+Pass   5: Total distortion =      408298.441, iterations =     9
+Pass   6: Total distortion =      240108.135, iterations =    11
+Pass   7: Total distortion =       168987.53, iterations =    13
+Pass   8: Total distortion =      129121.981, iterations =    15
+Pass   9: Total distortion =      93643.2698, iterations =    17
+Pass  10: Total distortion =       68104.772, iterations =    19
+Pass  11: Total distortion =      53300.4844, iterations =    21
+Pass  12: Total distortion =      44287.7379, iterations =    23
+Pass  13: Total distortion =      38545.6058, iterations =    25
+Pass  14: Total distortion =      29243.0911, iterations =    27
+Pass  15: Total distortion =      24624.8173, iterations =    29
+Pass  16: Total distortion =       21009.541, iterations =    31
+Pass  17: Total distortion =      17799.2092, iterations =    33
+Pass  18: Total distortion =      15351.3583, iterations =    35
+Pass  19: Total distortion =      13173.3008, iterations =    37
+Pass  20: Total distortion =      10988.0044, iterations =    39
+Pass  21: Total distortion =      10623.3896, iterations =    47
+Pass  22: Total distortion =      10521.6631, iterations =    59
+Pass  23: Total distortion =      10476.5649, iterations =    81
+Pass  24: Total distortion =      9171.22292, iterations =    90
+Pass  25: Total distortion =      8009.35883, iterations =    92
+Pass  26: Total distortion =      6819.67284, iterations =    94
+Pass  27: Total distortion =      6141.12628, iterations =    96
+Pass  28: Total distortion =       5572.0356, iterations =    98
+Pass  29: Total distortion =      4941.73146, iterations =   100
+Pass  30: Total distortion =      4223.67066, iterations =   102
+Pass  31: Total distortion =      3760.26996, iterations =   104
+Pass  32: Total distortion =      3187.44213, iterations =   106
+Pass  33: Total distortion =      2821.24558, iterations =   108
+Pass  34: Total distortion =      2494.09006, iterations =   110
+Pass  35: Total distortion =      2248.52951, iterations =   112
+Pass  36: Total distortion =       1999.5714, iterations =   114
+Pass  37: Total distortion =      1803.03901, iterations =   116
+Pass  38: Total distortion =      1653.46728, iterations =   118
+Pass  39: Total distortion =      1482.42414, iterations =   120
+Pass  40: Total distortion =      1349.89086, iterations =   122
+Pass  41: Total distortion =       1235.5878, iterations =   124
+Pass  42: Total distortion =      1116.28964, iterations =   126
+Pass  43: Total distortion =      1094.44409, iterations =   141
+Pass  44: Total distortion =      1020.89561, iterations =   143
+Pass  45: Total distortion =      954.342325, iterations =   145
+Pass  46: Total distortion =      913.546249, iterations =   154
+Pass  47: Total distortion =      815.827785, iterations =   156
+Pass  48: Total distortion =      748.374237, iterations =   158
+Pass  49: Total distortion =      708.501581, iterations =   160
+Pass  50: Total distortion =      659.347645, iterations =   162
+Pass  51: Total distortion =      607.225037, iterations =   164
+Pass  52: Total distortion =      573.254194, iterations =   166
+Pass  53: Total distortion =      544.794403, iterations =   168
+Pass  54: Total distortion =      505.931083, iterations =   170
+Pass  55: Total distortion =      470.198951, iterations =   172
+Pass  56: Total distortion =      432.719178, iterations =   174
+Pass  57: Total distortion =      397.333654, iterations =   176
+Pass  58: Total distortion =      365.638715, iterations =   178
+Pass  59: Total distortion =      337.347617, iterations =   180
+Pass  60: Total distortion =       315.59187, iterations =   182
+Pass  61: Total distortion =      304.023351, iterations =   200
+Pass  62: Total distortion =      282.564142, iterations =   202
+Pass  63: Total distortion =      264.399817, iterations =   204
+Pass  64: Total distortion =       245.13967, iterations =   206
+Pass  65: Total distortion =      233.318491, iterations =   216
+Pass  66: Total distortion =      214.811379, iterations =   218
+Pass  67: Total distortion =      197.720105, iterations =   220
+Pass  68: Total distortion =      183.206715, iterations =   222
+Pass  69: Total distortion =      163.005078, iterations =   224
+Pass  70: Total distortion =      152.163304, iterations =   226
+Pass  71: Total distortion =      135.155799, iterations =   228
+Pass  72: Total distortion =      126.003574, iterations =   230
+Pass  73: Total distortion =       116.70898, iterations =   232
+Pass  74: Total distortion =       108.12946, iterations =   234
+Pass  75: Total distortion =      101.367135, iterations =   245
+Pass  76: Total distortion =      93.1346112, iterations =   247
+Pass  77: Total distortion =      85.3972014, iterations =   249
+Pass  78: Total distortion =      78.4494956, iterations =   261
+Pass  79: Total distortion =      72.1270792, iterations =   263
+Pass  80: Total distortion =       66.354261, iterations =   265
+Pass  81: Total distortion =      60.7130045, iterations =   267
+Pass  82: Total distortion =      55.9941027, iterations =   269
+Pass  83: Total distortion =      52.0271376, iterations =   283
+Pass  84: Total distortion =        48.63123, iterations =   285
+Pass  85: Total distortion =      45.1809263, iterations =   294
+Pass  86: Total distortion =      42.5853326, iterations =   296
+Pass  87: Total distortion =      40.3276309, iterations =   302
+Pass  88: Total distortion =       37.965278, iterations =   304
+Pass  89: Total distortion =      35.6571856, iterations =   306
+Pass  90: Total distortion =       33.779706, iterations =   308
+Pass  91: Total distortion =      31.8949481, iterations =   310
+Pass  92: Total distortion =      30.0609544, iterations =   312
+Pass  93: Total distortion =      28.3362126, iterations =   314
+Pass  94: Total distortion =      26.8151451, iterations =   316
+Pass  95: Total distortion =      25.3429109, iterations =   318
+Pass  96: Total distortion =      24.0145891, iterations =   320
+Pass  97: Total distortion =      21.9394874, iterations =   334
+Pass  98: Total distortion =      20.7040531, iterations =   336
+Pass  99: Total distortion =      19.7020489, iterations =   338
+Pass 100: Total distortion =      18.5954139, iterations =   340
+Pass 101: Total distortion =      17.7415915, iterations =   342
+Pass 102: Total distortion =      16.8967199, iterations =   344
+Pass 103: Total distortion =      15.9812492, iterations =   346
+Pass 104: Total distortion =      15.1432166, iterations =   348
+Pass 105: Total distortion =      14.2927825, iterations =   350
+Pass 106: Total distortion =      13.1352858, iterations =   360
+Pass 107: Total distortion =      12.5807934, iterations =   362
+Pass 108: Total distortion =      11.9055001, iterations =   364
+Pass 109: Total distortion =      11.3482363, iterations =   366
+Pass 110: Total distortion =      10.9992437, iterations =   368
+Pass 111: Total distortion =       10.490948, iterations =   370
+Pass 112: Total distortion =      9.66277712, iterations =   378
+Pass 113: Total distortion =      9.12786928, iterations =   380
+Pass 114: Total distortion =      8.63159954, iterations =   382
+Pass 115: Total distortion =      7.98972241, iterations =   389
+Pass 116: Total distortion =      7.65239481, iterations =   396
+Pass 117: Total distortion =      7.30290949, iterations =   398
+Pass 118: Total distortion =      6.99059265, iterations =   400
+Pass 119: Total distortion =      6.69979682, iterations =   402
+Pass 120: Total distortion =      6.43181173, iterations =   404
+Pass 121: Total distortion =      6.14983864, iterations =   406
+Pass 122: Total distortion =      5.81488636, iterations =   409
+Pass 123: Total distortion =      5.34193243, iterations =   419
+Pass 124: Total distortion =      5.12841007, iterations =   424
+Pass 125: Total distortion =      4.92070244, iterations =   426
+Pass 126: Total distortion =       4.7219119, iterations =   428
+Pass 127: Total distortion =      4.55630065, iterations =   430
+Pass 128: Total distortion =      4.37578137, iterations =   432
+Pass 129: Total distortion =      4.19810099, iterations =   434
+Pass 130: Total distortion =       3.9465999, iterations =   442
+Pass 131: Total distortion =        3.819275, iterations =   444
+Pass 132: Total distortion =      3.65166293, iterations =   446
+Pass 133: Total distortion =      3.49321528, iterations =   448
+Pass 134: Total distortion =      3.33878672, iterations =   450
+Pass 135: Total distortion =      3.18482923, iterations =   452
+Pass 136: Total distortion =      3.04976256, iterations =   454
+Pass 137: Total distortion =      2.84968043, iterations =   462
+Pass 138: Total distortion =      2.61857348, iterations =   464
+Pass 139: Total distortion =      2.47107586, iterations =   470
+Pass 140: Total distortion =      2.31683498, iterations =   477
+Pass 141: Total distortion =      2.22566104, iterations =   479
+Pass 142: Total distortion =        2.131253, iterations =   481
+Pass 143: Total distortion =      2.04546797, iterations =   483
+Pass 144: Total distortion =      1.93750207, iterations =   489
+Pass 145: Total distortion =      1.83330677, iterations =   494
+Pass 146: Total distortion =      1.75106521, iterations =   500
+Pass 147: Total distortion =      1.67212033, iterations =   503
+Pass 148: Total distortion =      1.58411054, iterations =   509
+Pass 149: Total distortion =      1.50330642, iterations =   516
+Pass 150: Total distortion =      1.46216152, iterations =   518
+Pass 151: Total distortion =      1.40011142, iterations =   523
+Pass 152: Total distortion =      1.35357683, iterations =   525
+Pass 153: Total distortion =      1.30665091, iterations =   527
+Pass 154: Total distortion =      1.25621896, iterations =   530
+Pass 155: Total distortion =      1.21490485, iterations =   532
+Pass 156: Total distortion =      1.17708861, iterations =   534
+Pass 157: Total distortion =      1.13812526, iterations =   536
+Pass 158: Total distortion =      1.10448132, iterations =   538
+Pass 159: Total distortion =      1.05451572, iterations =   543
+Pass 160: Total distortion =      1.01781568, iterations =   546
+Pass 161: Total distortion =     0.973198244, iterations =   552
+Pass 162: Total distortion =     0.944797889, iterations =   554
+Pass 163: Total distortion =     0.905393763, iterations =   559
+Pass 164: Total distortion =     0.880767646, iterations =   561
+Pass 165: Total distortion =     0.835926111, iterations =   563
+Pass 166: Total distortion =     0.800312614, iterations =   566
+Pass 167: Total distortion =      0.77267799, iterations =   568
+Pass 168: Total distortion =     0.745192505, iterations =   570
+Pass 169: Total distortion =     0.709234687, iterations =   575
+Pass 170: Total distortion =     0.683723393, iterations =   579
+Pass 171: Total distortion =     0.657292943, iterations =   585
+Pass 172: Total distortion =     0.636363592, iterations =   589
+Pass 173: Total distortion =     0.616817896, iterations =   591
+Pass 174: Total distortion =     0.603188656, iterations =   593
+Pass 175: Total distortion =     0.584519952, iterations =   596
+Pass 176: Total distortion =      0.56514561, iterations =   600
+Pass 177: Total distortion =     0.545217085, iterations =   605
+Pass 178: Total distortion =     0.528402978, iterations =   609
+Pass 179: Total distortion =     0.513760707, iterations =   611
+Pass 180: Total distortion =     0.499593941, iterations =   613
+Pass 181: Total distortion =     0.486242025, iterations =   615
+Pass 182: Total distortion =     0.473089695, iterations =   618
+Pass 183: Total distortion =     0.463847572, iterations =   620
+Pass 184: Total distortion =     0.447088615, iterations =   626
+Pass 185: Total distortion =     0.438413724, iterations =   628
+Pass 186: Total distortion =     0.424763996, iterations =   632
+Pass 187: Total distortion =     0.413756084, iterations =   635
+Pass 188: Total distortion =      0.40451113, iterations =   637
+Pass 189: Total distortion =     0.392669357, iterations =   641
+Pass 190: Total distortion =     0.385857654, iterations =   643
+Pass 191: Total distortion =     0.376095852, iterations =   646
+Pass 192: Total distortion =     0.365135835, iterations =   650
+Pass 193: Total distortion =     0.355429789, iterations =   654
+Pass 194: Total distortion =     0.350192379, iterations =   656
+Pass 195: Total distortion =     0.344569367, iterations =   658
+Pass 196: Total distortion =     0.336944397, iterations =   660
+Pass 197: Total distortion =     0.330011909, iterations =   662
+Pass 198: Total distortion =     0.321166269, iterations =   666
+Pass 199: Total distortion =     0.312378585, iterations =   670
+Pass 200: Total distortion =     0.307477777, iterations =   672
+Pass 201: Total distortion =     0.300401376, iterations =   676
+Pass 202: Total distortion =     0.295560967, iterations =   678
+Pass 203: Total distortion =     0.289989933, iterations =   680
+Pass 204: Total distortion =     0.283812847, iterations =   682
+Pass 205: Total distortion =     0.277188613, iterations =   684
+Pass 206: Total distortion =     0.271434041, iterations =   686
+Pass 207: Total distortion =     0.266663203, iterations =   688
+Pass 208: Total distortion =     0.261960391, iterations =   690
+Pass 209: Total distortion =      0.25626214, iterations =   693
+Pass 210: Total distortion =     0.251581082, iterations =   695
+Pass 211: Total distortion =     0.246611589, iterations =   697
+Pass 212: Total distortion =     0.240869077, iterations =   700
+Pass 213: Total distortion =     0.235171083, iterations =   703
+Pass 214: Total distortion =     0.230987251, iterations =   706
+Pass 215: Total distortion =     0.225863589, iterations =   708
+Pass 216: Total distortion =       0.2218194, iterations =   710
+Pass 217: Total distortion =     0.216605851, iterations =   714
+Pass 218: Total distortion =     0.211316534, iterations =   718
+Pass 219: Total distortion =     0.207459092, iterations =   720
+Pass 220: Total distortion =     0.202281378, iterations =   724
+Pass 221: Total distortion =     0.198584441, iterations =   726
+Pass 222: Total distortion =     0.195217091, iterations =   728
+Pass 223: Total distortion =      0.19290049, iterations =   730
+Pass 224: Total distortion =     0.189554605, iterations =   732
+Pass 225: Total distortion =     0.185916344, iterations =   734
+Pass 226: Total distortion =     0.181603411, iterations =   737
+Pass 227: Total distortion =     0.178077147, iterations =   740
+Pass 228: Total distortion =     0.174813853, iterations =   743
+Pass 229: Total distortion =     0.171292488, iterations =   746
+Pass 230: Total distortion =     0.168096241, iterations =   749
+Pass 231: Total distortion =     0.165552692, iterations =   751
+Pass 232: Total distortion =     0.162997599, iterations =   753
+Pass 233: Total distortion =     0.160452658, iterations =   755
+Pass 234: Total distortion =     0.157824279, iterations =   757
+Pass 235: Total distortion =     0.154388516, iterations =   760
+Pass 236: Total distortion =     0.151025464, iterations =   764
+Pass 237: Total distortion =     0.148380138, iterations =   766
+Pass 238: Total distortion =       0.1461751, iterations =   768
+Pass 239: Total distortion =     0.143544925, iterations =   770
+Pass 240: Total distortion =     0.140876999, iterations =   772
+Pass 241: Total distortion =     0.138519304, iterations =   774
+Pass 242: Total distortion =     0.136057483, iterations =   776
+Pass 243: Total distortion =       0.1335933, iterations =   778
+Pass 244: Total distortion =     0.131614666, iterations =   780
+Pass 245: Total distortion =     0.129777421, iterations =   782
+Pass 246: Total distortion =     0.127676418, iterations =   784
+Pass 247: Total distortion =     0.125141114, iterations =   787
+Pass 248: Total distortion =     0.123325004, iterations =   789
+Pass 249: Total distortion =     0.122006983, iterations =   791
+Pass 250: Total distortion =     0.120394193, iterations =   793
+Pass 251: Total distortion =     0.119243065, iterations =   795
+Pass 252: Total distortion =     0.117595022, iterations =   797
+Pass 253: Total distortion =     0.115779221, iterations =   799
+Pass 254: Total distortion =     0.113947235, iterations =   801
+Pass 255: Total distortion =     0.112363364, iterations =   803
+Pass 256: Total distortion =     0.110668552, iterations =   805
+  0: mean   0.00331877288  dist   0.00123919209 count      6670
+  1: mean    0.0043273163  dist  0.000850209093 count     11041
+  2: mean   0.00525004743  dist  0.000864673289 count     12830
+  3: mean   0.00613221806  dist  0.000959652418 count     14755
+  4: mean   0.00703166705  dist   0.00102469116 count     13190
+  5: mean   0.00808270276  dist   0.00110621983 count      9882
+  6: mean   0.00936668739  dist   0.00106533268 count      6587
+  7: mean    0.0108648846  dist  0.000938802201 count      4470
+  8: mean    0.0125520322  dist  0.000859314925 count      3691
+  9: mean     0.014196584  dist  0.000737546885 count      3736
+ 10: mean     0.015644202  dist  0.000677848293 count      4414
+ 11: mean    0.0169524737  dist  0.000652671035 count      4953
+ 12: mean    0.0181847475  dist  0.000688526547 count      5437
+ 13: mean    0.0194126498  dist   0.00079728628 count      6326
+ 14: mean    0.0206473917  dist  0.000892441312 count      6924
+ 15: mean    0.0218956713  dist  0.000957343262 count      7456
+ 16: mean    0.0231102128  dist  0.000925869157 count      7797
+ 17: mean    0.0242930911  dist  0.000939560181 count      8498
+ 18: mean     0.025428731  dist  0.000939221471 count      9127
+ 19: mean    0.0265241452  dist   0.00101357349 count     10251
+ 20: mean    0.0276005454  dist   0.00102734054 count     10990
+ 21: mean    0.0286451653  dist   0.00103272754 count     11573
+ 22: mean    0.0296737365  dist    0.0010986299 count     12146
+ 23: mean     0.030730933  dist   0.00116868305 count     12444
+ 24: mean    0.0317952633  dist   0.00117334153 count     12469
+ 25: mean    0.0328692533  dist   0.00119542656 count     12355
+ 26: mean    0.0339475833  dist   0.00121003785 count     12554
+ 27: mean    0.0350069478  dist   0.00117788278 count     12756
+ 28: mean    0.0360508896  dist   0.00116403168 count     12951
+ 29: mean    0.0370968692  dist   0.00119671761 count     13149
+ 30: mean    0.0381431431  dist   0.00117779442 count     13153
+ 31: mean    0.0391689725  dist   0.00111337402 count     12980
+ 32: mean     0.040185485  dist   0.00110314775 count     12952
+ 33: mean      0.04119673  dist   0.00107374915 count     12853
+ 34: mean    0.0421925373  dist   0.00101539341 count     12435
+ 35: mean    0.0431866497  dist   0.00101351202 count     12506
+ 36: mean    0.0441602692  dist  0.000948519912 count     12299
+ 37: mean    0.0451253578  dist   0.00097650243 count     12379
+ 38: mean    0.0461170822  dist   0.00102181302 count     12382
+ 39: mean    0.0471204817  dist   0.00106714619 count     12474
+ 40: mean    0.0481453612  dist   0.00112054718 count     12552
+ 41: mean     0.049190782  dist    0.0011526657 count     12652
+ 42: mean    0.0502320677  dist   0.00115319702 count     12642
+ 43: mean    0.0512837656  dist   0.00116661424 count     12612
+ 44: mean     0.052342359  dist   0.00116776302 count     12378
+ 45: mean    0.0534122251  dist   0.00115487352 count     12308
+ 46: mean    0.0544877052  dist   0.00117722934 count     12240
+ 47: mean    0.0555563308  dist   0.00114269822 count     12064
+ 48: mean    0.0566097684  dist  0.000973373884 count     11166
+ 49: mean    0.0575828552  dist   0.00069694221 count     10039
+ 50: mean    0.0584477112  dist  0.000463104079 count      8570
+ 51: mean     0.059250433  dist  0.000448642648 count      8538
+ 52: mean    0.0601119325  dist  0.000673222996 count      9626
+ 53: mean    0.0610929541  dist  0.000959917728 count     10544
+ 54: mean    0.0621557161  dist   0.00109545002 count     10778
+ 55: mean     0.063286677  dist   0.00114645483 count     10728
+ 56: mean    0.0644260496  dist   0.00115448108 count     10634
+ 57: mean    0.0655747354  dist   0.00118080759 count     10444
+ 58: mean    0.0667469725  dist   0.00116146787 count     10100
+ 59: mean    0.0679264739  dist   0.00109769439 count      9632
+ 60: mean    0.0690640733  dist   0.00088444032 count      8695
+ 61: mean    0.0701240078  dist  0.000637875812 count      7758
+ 62: mean    0.0710803419  dist  0.000477255118 count      6858
+ 63: mean    0.0719774961  dist  0.000379609701 count      6135
+ 64: mean    0.0728426501  dist  0.000388632616 count      6217
+ 65: mean    0.0737368017  dist  0.000447167025 count      6390
+ 66: mean    0.0746719465  dist  0.000504641212 count      6385
+ 67: mean    0.0756807551  dist   0.00060453231 count      6711
+ 68: mean    0.0767410398  dist  0.000633110176 count      6555
+ 69: mean    0.0778206959  dist  0.000632453186 count      6470
+ 70: mean    0.0789356381  dist  0.000647332403 count      6369
+ 71: mean    0.0800484493  dist  0.000648404763 count      6192
+ 72: mean    0.0812054276  dist  0.000713663234 count      6270
+ 73: mean    0.0824063271  dist  0.000774538843 count      6179
+ 74: mean    0.0836698562  dist  0.000898538507 count      6254
+ 75: mean    0.0850144997  dist  0.000993858324 count      6313
+ 76: mean    0.0864352882  dist   0.00108185085 count      6296
+ 77: mean    0.0879047066  dist   0.00107293285 count      5905
+ 78: mean    0.0894007906  dist   0.00108228496 count      5691
+ 79: mean      0.09095449  dist   0.00111426413 count      5427
+ 80: mean    0.0925374404  dist    0.0010843249 count      5080
+ 81: mean    0.0941779017  dist   0.00117475097 count      4970
+ 82: mean    0.0959072933  dist    0.0011737427 count      4674
+ 83: mean    0.0976453051  dist   0.00109345082 count      4266
+ 84: mean    0.0994393304  dist   0.00106392941 count      3847
+ 85: mean       0.1012863  dist   0.00106693013 count      3618
+ 86: mean     0.103220865  dist   0.00111409277 count      3402
+ 87: mean     0.105251566  dist   0.00113909889 count      3122
+ 88: mean     0.107345454  dist  0.000918723759 count      2624
+ 89: mean     0.109429531  dist  0.000880021311 count      2384
+ 90: mean     0.111618944  dist  0.000864978356 count      2033
+ 91: mean     0.113968395  dist  0.000851569173 count      1761
+ 92: mean     0.116425171  dist   0.00082299707 count      1527
+ 93: mean     0.119124427  dist  0.000764847267 count      1249
+ 94: mean     0.121945605  dist  0.000743385404 count      1012
+ 95: mean     0.125049904  dist  0.000692820875 count       805
+ 96: mean     0.128405824  dist  0.000627066242 count       638
+ 97: mean     0.132178709  dist  0.000522221671 count       488
+ 98: mean     0.135908499  dist  0.000510529091 count       407
+ 99: mean     0.140141949  dist  0.000538833381 count       301
+100: mean     0.144959226  dist  0.000708821404 count       268
+101: mean     0.151395723  dist  0.000807184319 count       221
+102: mean     0.158525392  dist  0.000518081593 count       134
+103: mean     0.165777534  dist  0.000515679596 count        87
+104: mean     0.176123828  dist  0.000719390926 count        84
+105: mean     0.186702549  dist  0.000772415544 count        57
+106: mean     0.200419575  dist  0.000711214321 count        49
+107: mean     0.217524484  dist  0.000994720147 count        38
+108: mean     0.236657888  dist   0.00057803723 count        27
+109: mean     0.256105304  dist    0.0010556085 count        30
+110: mean     0.275064319  dist  0.000207388439 count        12
+111: mean     0.288746208  dist   0.00022668764 count        15
+112: mean     0.308941334  dist   0.00023134645 count        13
+113: mean     0.330697775  dist  0.000674437615 count        21
+114: mean     0.354471266  dist  0.000249789911 count         9
+115: mean     0.373679072  dist  0.000393105031 count        10
+116: mean     0.403226137  dist  0.000963288127 count        14
+117: mean     0.434030652  dist   0.00046603987 count        11
+118: mean     0.454407066  dist  0.000145378363 count         8
+119: mean     0.489210844  dist  0.000341837003 count         4
+120: mean      0.52963984  dist  0.000528416655 count         5
+121: mean     0.567213058  dist   0.00061677472 count         5
+122: mean     0.606700659  dist  0.000588358031 count         6
+123: mean     0.646660566  dist  4.74787812e-05 count         4
+124: mean     0.708067119  dist  0.000606439658 count         3
+125: mean     0.760975718  dist   0.00113301084 count         4
+126: mean     0.816931903  dist  0.000263929804 count         3
+127: mean     0.849316597  dist  0.000631268718 count         4
+128: mean     0.930313706  dist  0.000229082798 count         2
+129: mean     0.958400548  dist  0.000222860865 count         3
+130: mean      1.03890121  dist  0.000333558273 count         2
+131: mean      1.11552155  dist  0.000805928896 count         3
+132: mean      1.17452693  dist  0.000162322147 count         2
+133: mean      1.23967135  dist               0 count         1
+134: mean      1.31663871  dist  8.75545447e-06 count         2
+135: mean      1.49791789  dist               0 count         1
+136: mean      1.56500626  dist               0 count         1
+137: mean        1.713673  dist               0 count         1
+138: mean      1.77987814  dist               0 count         1
+139: mean      1.96747124  dist               0 count         1
+140: mean      2.24643779  dist               0 count         1
+141: mean       2.3003788  dist               0 count         1
+142: mean      2.37989831  dist               0 count         1
+143: mean      2.69516587  dist               0 count         1
+144: mean      2.95925736  dist               0 count         1
+145: mean       3.2543571  dist               0 count         1
+146: mean      4.90101624  dist               0 count         1
+147: mean      5.18773746  dist               0 count         1
+148: mean       5.5204916  dist               0 count         1
+149: mean      6.04123211  dist               0 count         1
+150: mean      7.01453161  dist               0 count         1
+151: mean      7.50037241  dist               0 count         1
+152: mean      7.60764408  dist               0 count         1
+153: mean       8.0839386  dist               0 count         1
+154: mean      10.2773228  dist               0 count         1
+155: mean      10.5089169  dist    0.0001584938 count         2
+156: mean      12.0848675  dist               0 count         1
+157: mean       13.103734  dist               0 count         1
+158: mean      16.1241245  dist               0 count         1
+159: mean      16.9008923  dist               0 count         1
+160: mean       22.437439  dist               0 count         1
+161: mean      25.0661869  dist               0 count         1
+162: mean       25.816061  dist               0 count         1
+163: mean       30.623291  dist               0 count         1
+164: mean      31.0519714  dist               0 count         1
+165: mean      37.8715057  dist               0 count         1
+166: mean      38.4624214  dist               0 count         1
+167: mean      39.2276306  dist               0 count         1
+168: mean      40.0230103  dist               0 count         1
+169: mean      40.2540779  dist               0 count         1
+170: mean       42.880558  dist               0 count         1
+171: mean        46.92799  dist               0 count         1
+172: mean      48.6654663  dist               0 count         1
+173: mean      54.6454773  dist               0 count         1
+174: mean      55.4653015  dist               0 count         1
+175: mean      57.8654747  dist               0 count         1
+176: mean      58.7828941  dist               0 count         1
+177: mean       59.377327  dist               0 count         1
+178: mean      63.0788193  dist               0 count         1
+179: mean      64.7898178  dist               0 count         1
+180: mean      65.2943497  dist               0 count         1
+181: mean      68.2856064  dist               0 count         1
+182: mean      69.0054932  dist               0 count         1
+183: mean      73.3385239  dist               0 count         1
+184: mean      75.4902802  dist               0 count         1
+185: mean      79.6252594  dist               0 count         1
+186: mean      88.0365448  dist               0 count         1
+187: mean      93.1971359  dist               0 count         1
+188: mean      93.8976669  dist               0 count         1
+189: mean      94.5276108  dist               0 count         1
+190: mean      97.2563171  dist               0 count         1
+191: mean      105.631088  dist               0 count         1
+192: mean      108.696022  dist               0 count         1
+193: mean      112.546371  dist               0 count         1
+194: mean      114.024826  dist               0 count         1
+195: mean      127.689728  dist               0 count         1
+196: mean      128.996078  dist               0 count         1
+197: mean      132.076752  dist               0 count         1
+198: mean      141.266281  dist               0 count         1
+199: mean      141.349136  dist               0 count         1
+200: mean      142.568985  dist               0 count         1
+201: mean      142.661804  dist               0 count         1
+202: mean      146.137344  dist               0 count         1
+203: mean      153.650467  dist               0 count         1
+204: mean      154.906113  dist               0 count         1
+205: mean      159.941605  dist               0 count         1
+206: mean      163.126419  dist               0 count         1
+207: mean      165.260193  dist               0 count         1
+208: mean      170.402618  dist               0 count         1
+209: mean      173.748886  dist               0 count         1
+210: mean      182.718063  dist               0 count         1
+211: mean      186.355194  dist               0 count         1
+212: mean      188.066635  dist               0 count         1
+213: mean      193.445068  dist               0 count         1
+214: mean      199.140366  dist               0 count         1
+215: mean      203.059464  dist               0 count         1
+216: mean      220.424377  dist               0 count         1
+217: mean      257.912384  dist               0 count         1
+218: mean      262.557068  dist               0 count         1
+219: mean       265.09726  dist               0 count         1
+220: mean       267.02887  dist               0 count         1
+221: mean      298.688446  dist               0 count         1
+222: mean      302.403656  dist               0 count         1
+223: mean      303.560089  dist               0 count         1
+224: mean      308.201477  dist               0 count         1
+225: mean      330.377167  dist               0 count         1
+226: mean       343.66156  dist               0 count         1
+227: mean      357.011444  dist               0 count         1
+228: mean      383.692322  dist               0 count         1
+229: mean      407.557251  dist               0 count         1
+230: mean      415.969788  dist               0 count         1
+231: mean       424.04248  dist               0 count         1
+232: mean      442.538025  dist               0 count         1
+233: mean      464.968384  dist               0 count         1
+234: mean      471.166626  dist               0 count         1
+235: mean      514.897034  dist               0 count         1
+236: mean      518.939514  dist               0 count         1
+237: mean      521.310974  dist               0 count         1
+238: mean      528.833069  dist               0 count         1
+239: mean      538.406921  dist               0 count         1
+240: mean      540.313599  dist               0 count         1
+241: mean      544.107239  dist               0 count         1
+242: mean       545.66394  dist               0 count         1
+243: mean      551.780701  dist               0 count         1
+244: mean       583.80127  dist               0 count         1
+245: mean      594.011169  dist               0 count         1
+246: mean      640.892944  dist               0 count         1
+247: mean      657.173828  dist               0 count         1
+248: mean      738.822998  dist               0 count         1
+249: mean      780.470093  dist               0 count         1
+250: mean      818.366272  dist               0 count         1
+251: mean       870.44989  dist               0 count         1
+252: mean      887.309692  dist               0 count         1
+253: mean      887.929443  dist               0 count         1
+254: mean      935.875305  dist               0 count         1
+255: mean            1024  dist               0 count       118
+Pass 256: Total distortion =     0.110255727, iterations =   807
+ -- Writing output --

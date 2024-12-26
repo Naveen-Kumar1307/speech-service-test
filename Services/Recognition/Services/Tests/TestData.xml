@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GrammarTest>
+
+  <Package Folder="/Data/real-grammars/ge-test"
+           AudioFolder="/Data/audio/samples"
+           Settings="client.ScoringDirectory=english-p16-na-050930.s101004">
+
+    <Recognition Type="RecognitionSucceeded">
+      <Expected Text="yes i did they told me to call back in a week to see if anyone has turned it in" Result="" />
+      <Grammar>
+        <Statement Text="yes i did they told me to call back in a week to see if anyone has turned it in" Result="" />
+      </Grammar>
+    </Recognition>
+
+  </Package>
+
+  <Package Folder="/Data/sample-grammars/English/voice-mail"
+             Settings="client.ScoringDirectory=english-p16-na-991221.s000608"
+             AudioFolder="/Data/audio/test-samples">
+
+    <Recognition Type="RecognitionSucceeded">
+      <Grammar Name=".SENTENCE" />
+      <Expected Text="dial four four nine zero"
+                Result="number four four nine zero, command dial" />
+    </Recognition>
+
+  </Package>
+
+  <Package Folder="/Data/real-grammars/ge-test"
+           AudioFolder="/Data/audio/test-samples"
+           Settings="client.ScoringDirectory=english-p16-na-050930.s101004">
+
+    <!--<Recognition Type="RecognitionFailed">
+      <Expected Text="sam is" Result="" />
+      <Grammar>
+        <Statement Text="he is reading" Result="answer 0" />
+        <Statement Text="he is sitting" Result="answer 1" />
+      </Grammar>
+    </Recognition>-->
+
+    <Recognition Type="RecognitionSucceeded">
+      <Expected Text="id like a seven am wakeup call please" Result="" />
+      <Grammar>
+        <!--make sure capital letters in grammars don't bomb--> 
+        <Statement Text="i'd like a seven am wakeup call please" Result="" />
+        <Statement Text="i would like a seven am wakeup call please" Result="" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionError">
+      <Grammar Name="[(excellent customer service)" />
+      <Expected
+        Text="excellent customer service is the cornerstone of a successful business" Result="" />
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Expected Text="hes sitting" Result="" />
+      <Grammar>
+        <!--make sure capital letters in grammars don't bomb--> 
+        <Statement Text="He's reading" Result="answer 0" />
+        <Statement Text="He's sitting" Result="answer 1" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionFailed">
+      <Expected Text="he is reading" Result="" />
+      <Grammar>
+        <Statement Text="we bought the plants in the spring" Result="" />
+        <Statement Text="they went to france in the winter" Result="" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Expected Text="he is sitting" Result="" />
+      <Grammar>
+        <Statement Text="he is reading" Result="answer 0" />
+        <Statement Text="he is sitting" Result="answer 1" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionError">
+      <Expected Text="he is reading" Result="" />
+      <Grammar>
+        <Statement Text="[]" Result="" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Expected Text="good afternoon" Result="" />
+      <Grammar>
+        <Statement Text="good afternoon" Result="" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionFailed">
+      <Expected Text="good afternoon" Result="" />
+      <Grammar>
+        <Statement Text="good morning" Result="" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Grammar Name=".SENTENCE13" />
+      <Expected Text="he is reading" Result="answer 0" />
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Expected Text="we bought the plants in the spring" Result="" />
+      <Grammar>
+        <Statement Text="we went to france in the spring" Result="answer 0" />
+        <Statement Text="we bought the plants in the spring" Result="answer 1" />
+      </Grammar>
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Grammar Name=".SENTENCE12" />
+      <Expected Text="they went to france in the winter" Result="" />
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Grammar Name=".SENTENCE2" />
+      <Expected Text="weve got to find a solution to the companys problems" Result="" />
+    </Recognition>
+
+    <Recognition Type="RecognitionSucceeded">
+      <Grammar Name=".SENTENCE3" />
+      <Expected 
+        Text="excellent customer service is the cornerstone of a successful business" Result="" />
+    </Recognition>
+
+  </Package>
+
+</GrammarTest>
+

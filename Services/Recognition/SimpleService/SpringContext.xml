@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!-- a simple recognition service -->
+  <object id="SimpleRecognitionService" name="ISimpleRecognitionService"
+    type="GlobalEnglish.Recognition.SimpleService.SimpleRecognitionService, GlobalEnglish.Recognition.SimpleService">
+  </object>
+
+  <!-- reuse recognizer definitions from services DLL -->
+  <import resource=
+    "assembly://GlobalEnglish.Recognition.Services/GlobalEnglish.Recognition.Services/SpringContext.xml" />
+
+</objects>

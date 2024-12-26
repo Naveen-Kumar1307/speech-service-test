@@ -1,0 +1,100 @@
+phoneme_grapheme_map
+# phoneme_grapheme_map english
+# phone_SEQUENCE grapheme1 grapheme2 grapheme3 ... 
+# (the algorithm can eat up more than one phone at a time)
+# phoneme_grapheme_map,v 1.5 2003/05/10 00:13:57 victor Exp
+aa	au	ea	ah	aa	ao	aw	ou	ow	a	o
+ae	aa	a	au
+ah	ou	oo	oe	au	o	u	a	e
+ao	oo	oh	oa	aw	au	ou	o	a
+aw	ou	aw	au	ao	ow
+
+axm	m
+axn	n'
+er	err
+er	er
+# composite
+axw	u
+# composite
+axz	's
+ax	eau	ee	au	ai	ou	eo	u	y	o	a	i	e
+ay	igh	ia	uy	ey	ei	ay	ai	ae	i	y
+b	bb	b
+ch	tch	sch	dz	ch	tj	ti	g	ci	c	t
+dh	th
+d	dd	d
+dx	dd	d	tt	th	dt	t
+eh	ie	ey	ei	ee	ea	ai	aa	e	a
+er	arr	e'r	ear	our	orr	uer	urr	or	ur	ir	aur	ar	eur
+ey	ey 	ea	eigh	ei	ay	au	aigh	ai	ae	ee	a	e
+f	ff	ph	gh	pf	f	v	w
+# composite
+gz	x
+gzh	x
+g	gh	gg	gu	g
+# composite
+hhw	wh
+hh	wh	gh	ch	h
+ih	ea	ei	ee	ai	ui	ia	y	i	u	o	a	e
+iy	ee	ea	oe	ei	ay	ey	eo	ie	ae	ii	i	y	e
+jh	dzh	dj	dg	gg	jj	gi	di	du	g	j	d
+# composite
+ksh	xi
+# composite
+ks	x
+k	ck	cc	kk	ch	qu	q	c	k	x
+# composite
+axl	le
+l	ll	l
+axl	l	ul	il	el	all	al
+
+# composite
+maxk	mc
+# composite
+maek	mc
+m	mm	mn	m
+ng	ng	n
+n	nn	kn	nt	ng	gn	n
+ow	eau	ou	ow	oo	oa	ew	au	ao	o
+oy	oy	oi	eu	awy
+p	pp	p
+r	rr	rh	wr	r	aur
+sh	sh	sci	ssi	sz	ss	sh	sc	chs	ch	ti	ci	ce	si	t	s	c
+s	sch	sts	sz	sw	ss	sc	s	c	z
+th	th
+# composite
+ts	zz
+t	tt	th	dt	d	t
+uh	ui	ou	oo	o	u	eu
+uw	wo	ui	ew	eu	oo	ou	oe	o	u
+v	vv	v	w	f
+# composite
+wah	o
+wax	o
+w	wh	ou	w	u
+# composite
+yax	u
+# composite
+yuh	u
+# composite
+yer	ure	ur
+yuw	ew	uu	ue	u	eau
+y	ll	j	y	i
+zh	ti	si	g	z	s	j
+z	zz	cz	z	x	s
+
+# last-resort mappings (let others kick in first)
+ch	tu
+sh	tu
+ly	ll
+er	r
+z	ss
+eh	ay
+k	g
+# "stephen"
+v	ph
+# "entrepreneur"
+aan	en
+
+# the pause phone mapping appears to need to be one the last line
+-	al	ab	gh	o	i	e	l	h	-	t	d	c	b	p	r	n	x	-	'

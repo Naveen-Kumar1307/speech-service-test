@@ -1,0 +1,23 @@
+;
+;  GE GRAMMAR SPEC FILE
+;
+;
+
+DynamicGrammar:dynamic[]
+
+.SENTENCE	DynamicGrammar
+.SENTENCE1	[(white shoes)(why choose)(wine choice)(wind chill)]
+.SENTENCE2	[(excuse me while i kiss the sky)(accuse me when i kiss this guy)(recuse lee where i miss the lie)(reuse tea while guy hits that fly)]
+.SENTENCE3	[(we went to france in the spring)(in the spring we went to france)(they went to france in the winter)(we bought the plants in the spring)]
+.SENTENCE4	[(in the basement)(boys and girls)(happy days)(together forever)]
+.SENTENCE5	[roll roar low row]
+
+GLOBALENGLISH1 [abd tomohiro gita abeer arun sonal ceo rollette]
+GLOBALENGLISH2 [binet ridesharing alani nondisclosure notepad]
+GLOBALENGLISH3 [hmm argentinean ufos atm sanjeev vomited]
+GLOBALENGLISH4 [intranet uv usability forwardness hairdryer]
+GLOBALENGLISH5 [clingy ufo formfitting formfitting picnicking]
+GLOBALENGLISH6 [sunhill talia talia midori tomoko yuki]
+GLOBALENGLISH7 [deanne nargis nargis valentines extrovert]
+GLOBALENGLISH8 [introvert nosy nonverbal doze]
+

@@ -1,0 +1,15 @@
+# Scoring:
+Scoring.Tree		${NUANCE}/data/scoring/english-uk-s16-na-080313.s081223/tree
+Scoring.Attributes	${NUANCE}/data/scoring/english-uk-s16-na-080313.s081223/attr
+
+Scoring.Threshold	3
+Scoring.Smoothing	TRUE
+Scoring.TreeMapping	optimum
+Scoring.NumPhones	2.5
+
+Scoring.Debug		TRUE
+
+scoring.ThresholdsFile  ${NUANCE}/data/scoring/english-uk-s16-na-080313.s081223/thresholds
+scoring.PercentFA	20 
+scoring.MappingFile	${NUANCE}/data/scoring/english-uk-s16-na-080313.s081223/phoneme_grapheme_map
+scoring.BoundaryFile    ${NUANCE}/data/scoring/english-uk-s16-na-080313.s081223/phn_dist_boundary

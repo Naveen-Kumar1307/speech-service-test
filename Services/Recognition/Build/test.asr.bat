@@ -1,0 +1,1 @@
+nant /f:asr.build run.tests -D:target.environment=local -D:source.folder=\VaultBase\Major\Development\Azure -D:connections.folder=\VaultBase\Connections -D:shared.scripts.folder=\VaultBase\Buildmaster -D:branch.folder=\VaultBase -D:branch=Major -D:dotnet.framework.path="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319"

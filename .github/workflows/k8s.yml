@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - feature/k8s
 
 jobs:
   build-and-push:

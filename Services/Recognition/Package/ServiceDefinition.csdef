@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="ASRAzureService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" >
+  <WebRole name="GlobalEnglish.Recognition.Web" vmsize="Small">
+    <Startup>
+      <Task commandLine="ConfigureIIS.cmd" executionContext="elevated" taskType="simple" />
+    </Startup>
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="ServiceEndpoint" endpointName="ServiceEndpoint" />
+		  <Binding name="HttpsIn" endpointName="HttpsIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <ConfigurationSettings>
+      <Setting name="AzureTable"/>
+      <Setting name="SpeechRecognitionConnectionString"/>
+    </ConfigurationSettings>
+    <Endpoints>
+      <InputEndpoint name="ServiceEndpoint" protocol="http" port="80" />
+	  <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="ServiceProvider" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="WCFTraceWebRole.svclog" cleanOnRoleRecycle="false" sizeInMB="500" />
+    </LocalResources>
+	<Certificates>
+		<Certificate name="ServiceProvider" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+  </WebRole>
+</ServiceDefinition>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!-- ISpeechFileRecognitionService for Flash format file -->
+  <object id="ISpeechRecognitionService" name="ISpeechFileRecognitionService" singleton="false"
+    type="GlobalEnglish.Recognition.Services.SpeechFileRecognizer, GlobalEnglish.Recognition.Services">
+    <property name="SpeechRecognizer" ref="SpeechRecognitionService" />
+    <property name="FlashRecognizer" ref="FlashRecognitionService" />
+    <property name="SpeexRecognizer" ref="SpeechRecognitionService" />
+    <property name="SampleRecognizer" ref="SampleRecognitionService" />
+  </object>
+
+  <!-- ISpeechRecognitionService for Mpeg3 or Ogg format audio -->
+  <object id="SpeechRecognitionService" singleton="false"
+    type="GlobalEnglish.Recognition.Services.TranscodeSpeechRecognizer, GlobalEnglish.Recognition.Services">
+    <property name="AudioConverter" ref="SpeechAudioConverter" />
+    <property name="TargetSpeechRecognizer" ref="SampleRecognitionService" />
+  </object>
+
+  <!-- ISpeechRecognitionService for Flash format audio -->
+  <object id="FlashRecognitionService" singleton="false"
+    type="GlobalEnglish.Recognition.Services.TranscodeSpeechRecognizer, GlobalEnglish.Recognition.Services">
+    <property name="AudioConverter" ref="FlashAudioConverter" />
+    <property name="TargetSpeechRecognizer" ref="SampleRecognitionService" />
+  </object>
+
+  <!-- ISpeechRecognitionService for Speex format audio -->
+  <!--<object id="SpeexRecognitionService" singleton="false"
+    type="GlobalEnglish.Recognition.Services.TranscodeSpeechRecognizer, GlobalEnglish.Recognition.Services">
+    <property name="AudioConverter" ref="SpeexWaveConverter" />
+    <property name="TargetSpeechRecognizer" ref="SampleRecognitionService" />
+  </object>-->
+
+  <!-- ISpeechRecognitionService for PCM format audio -->
+  <object id="SampleRecognitionService" singleton="false"
+    type="GlobalEnglish.Recognition.Services.EduSpeakRecognizer, GlobalEnglish.Recognition.Services"
+    factory-method="InitializePackage" />
+
+
+  <!-- formatted audio converter (flv,mp3,spx,ogg => PCM) -->
+  <object id="SpeechAudioConverter"
+    type="GlobalEnglish.Media.AudioConverters.Mpeg3AudioConverter, GlobalEnglish.Media.AudioConverters" />
+
+  <!-- Flash format audio converter (Flash => Speex) -->
+  <object id="FlashAudioConverter"
+    type="GlobalEnglish.Media.AudioConverters.FlashAudioConverter, GlobalEnglish.Media.AudioConverters" />
+
+  <!-- Speex format audio converter (Speex => PCM) -->
+  <!--<object id="SpeexWaveConverter"
+    type="GlobalEnglish.Media.AudioConverters.SpeexWaveConverter, GlobalEnglish.Media.AudioConverters" />-->
+
+</objects>

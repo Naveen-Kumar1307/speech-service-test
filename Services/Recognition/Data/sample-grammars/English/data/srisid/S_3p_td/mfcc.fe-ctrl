@@ -1,0 +1,69 @@
+preemphasis                                     float   -1.052632
+preemphasis_delay                               int     1
+
+
+# 8k sampling rate front end values. This corresponds to:
+#     a window size of 25.6 msec        = (window_size / sampling_rate)
+#     a dft bin resolution of 31.25 Hz  = (sampling_rate / fft_size)
+#     a frame rate of 10 msec intervals = (frame_advance_num_samples / sampling_rate)
+fft_size                                        int     128
+window_size                                     int     100
+sampling_rate                                   int     8000
+frame_advance_num_samples                       int     80 
+
+
+# these are the parameters for computing the delta cepstra features
+# these are centered differences that are spaced the following number of
+# frames apart.  These numbers should be even numbers.
+delta_cepstrum_frame_difference                 int     4
+delta_delta_cepstrum_frame_difference           int     8
+delta_delta_delta_cepstrum_frame_difference           int     12
+
+
+# cepstral zero mean
+# value = 1 means that mean is removed from c1 to cN over entire sentence
+# value = 0 means that there is no cepstral mean compensation
+zero_mean					int	1
+
+
+# rasta
+# value = 1 means that rasta is used
+# value = 0 means that rasta is not used
+rasta_filt					int	0
+rasta_time_constant				float   0.97
+
+# num_filters is the size of the filterbank array
+# num_cepstrum is how many cepstral coefficients we want c1 to cN
+# the value of num_cepstrum should always be less than the value of num_filters
+num_filters					int	24
+num_cepstrum					int	14
+bandwidth_scale                                 float   0.9
+
+
+# mel_filters_min_freq is where the filterbank should start
+# mel_filters_max_freq is where the filterbank should end
+mel_filters_min_freq				float	0
+mel_filters_max_freq				float	4000
+
+
+# the range of mel_filters_warp_const is [-1.0 1.0]
+# a larger number means that there is more low frequency resolution.
+# a value of 0.0 -> no warping (linear filterbank)
+mel_filters_warp_const				float	0.2
+
+
+# this controls the shape of each filter
+# 1 -> square filter
+# 0 -> triangle filter
+mel_filters_trapezoidal_ratio			float	0.0
+
+
+# how much memory to initially allocate to the front end control file
+max_num_frames_in_waveform                      int     5000
+
+
+# the compute method for computing the features
+gsf_install_function                            string  standard_batch_front_end
+
+
+mean_var_norm					int	0

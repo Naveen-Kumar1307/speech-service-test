@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="8105ed06-e459-4d33-b98d-088a058319fd" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>This library contains utility classes that have the 
+      relationships depicted in the following diagrams. Select 
+      a namespace from the table of contents to list the classes
+      contained in that namespace.</para>
+    </introduction>
+    <section address="ServiceModels">
+      <title>GlobalEnglish.Utility.Services Models</title>
+      <content>
+        <mediaLink>
+          <image placement="center" xlink:href="AuthenticationModels" />
+        </mediaLink>
+     </content>
+    </section>
+     <section address="SecurityModels">
+      <title>GlobalEnglish.Utility.Security Models</title>
+      <content>
+        <mediaLink>
+          <image placement="center" xlink:href="SecurityModels" />
+        </mediaLink>
+     </content>
+    </section>
+    <section address="LibraryModels">
+      <title>GlobalEnglish.Utility.Parameters Models</title>
+      <content>
+        <mediaLink>
+          <image placement="center" xlink:href="ParameterModels" />
+        </mediaLink>
+     </content>
+    </section>
+ </developerConceptualDocument>
+</topic>

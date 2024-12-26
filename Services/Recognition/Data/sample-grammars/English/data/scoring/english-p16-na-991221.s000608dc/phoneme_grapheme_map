@@ -1,0 +1,79 @@
+phoneme_grapheme_map
+# phoneme_grapheme_map english
+# phone_SEQUENCE grapheme1 grapheme2 grapheme3 ... 
+# (the algorithm can eat up more than one phone at a time)
+# phoneme_grapheme_map,v 1.5 2003/05/10 00:13:57 victor Exp
+aa	au	ea	ah	aa	ao	aw	ou	ow	a	o
+ae	aa	a
+ah	ou	oo	au	o	u	a	e
+ao	oo	oh	oa	aw	au	ou	o	a
+aw	ou	aw	au	ao	ow
+# composite
+axl	le	l
+# watch out, the pronunciation /axr/ can be interpreted either as the phone /axr/ OR the phone sequence /ax r/!
+axr	er	or	r
+# composite
+axw	u
+ax	eau	au	ai	ou	eo	u	y	o	a	i	e
+ay	ia	uy	ey	ei	ay	ai	ae	i	y
+b	bb	b
+ch	tch	sch	dz	ch	tj	tu	ti	ci	c	t
+dh	th
+d	dd	d
+eh	ey	ei	ea	ai	aa	e	a
+el	le	al	el	ell	ul	il	yl
+em	im	um	m
+en	on	in	an	ann	n
+er	ear	our	err	uer	er	or	ur	ir	
+ey	ey	ea	ei	ay	au	ai	ae	ee	a	e
+f	ff	ph	gh	pf	f	v	w
+# composite
+gz	x
+g	gh	gg	gu	g
+# composite
+hhw	wh
+hh	wh	gh	ch	h
+ih	ea	ei	ee	ai	ui	ia	y	i	u	o	a	e
+iy	ee	ea	oe	ei	ay	ey	eo	ie	ae	ii	i	y	e
+jh	dzh	dj	dg	gg	jj	gi	di	du	g	j	d
+# composite
+ksh	xi
+# composite
+ks	x
+k	ck	cc	kk	ch	qu	q	c	k	x
+# composite
+ly	ll
+l	ll	l
+# composite
+maxk	mc
+# composite
+maek	mc
+m	mm	mn	m
+ng	ng	n
+n	nn	kn	nt	gn	n
+ow	eau	ou	ow	oo	oa	ew	au	ao	o
+oy	oy	oi	eu
+p	pp	p
+r	rr	rh	wr	r
+sh	shi	sci	ssi	sz	ss	sh	sc	chs	ch	ti	tu	ci	si	t	s	c
+s	sch	sts	sz	sw	st	ss	sc	s	c	z
+th	th
+# composite
+ts	zz
+t	tt	th	dt	d	t
+uh	ui	ou	oo	o	u
+uw	wo	ew	eu	oo	ou	o	u
+v	vv	v	w	f
+# composite
+wah	o
+w	wh	ou	w	u
+# composite
+yax	u
+# composite
+yuh	u
+# composite
+yuw	ew	u
+y	ll	j	y	i
+zh	ti	si	g	z	s	j
+z	zz	cz	z	x	s
+-	al	gh	e	l	h	-	t	d	c	b	p	'
