@@ -21,6 +21,7 @@ $site | Set-Item
 
 Write-Host "IIS configuration completed successfully."
 
+Set-DnsClientServerAddress `    -InterfaceIndex 18 `    -ServerAddresses ("8.8.8.8","1.1.1.1")
 
 Set-ItemProperty -Path "IIS:\Sites\Default Web Site" -Name physicalPath -Value "C:\inetpub\wwwroot\Services\Recognition\Web"
 
