@@ -6,6 +6,8 @@ WORKDIR /inetpub/wwwroot
 # Copy application files to the container
 COPY . .
 
+COPY configure-iis.ps1 /scripts/configure-iis.ps1
+
 # Install required Windows features
 RUN powershell -Command \
     Install-WindowsFeature -Name Web-Asp-Net45 -IncludeAllSubFeature; \
@@ -13,11 +15,4 @@ RUN powershell -Command \
     Install-WindowsFeature -Name NET-WCF-Services45 -IncludeAllSubFeature
 
 # Map IIS physical path
-RUN powershell -Command \
-    Import-Module WebAdministration; \
-    if (-not (Test-Path "C:\inetpub\wwwroot\Services")) { New-Item -Path "C:\inetpub\wwwroot\Services" -ItemType Directory }; \
-    if (-not (Test-Path "C:\inetpub\wwwroot\Services\Recognition")) { New-Item -Path "C:\inetpub\wwwroot\Services\Recognition" -ItemType Directory }; \
-    if (-not (Test-Path "C:\inetpub\wwwroot\Services\Recognition\Web")) { New-Item -Path "C:\inetpub\wwwroot\Services\Recognition\Web" -ItemType Directory }; \
-    $site = Get-Item "IIS:\Sites\Default Web Site"; \
-    $site.physicalPath = "C:\inetpub\wwwroot\Services\Recognition\Web"; \
-    $site | Set-Item
+RUN powershell -ExecutionPolicy Bypass -File /scripts/configure-iis.ps1
