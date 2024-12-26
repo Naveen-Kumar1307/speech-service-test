@@ -20,3 +20,8 @@ $site.physicalPath = "C:\inetpub\wwwroot\Services\Recognition\Web"
 $site | Set-Item
 
 Write-Host "IIS configuration completed successfully."
+
+
+Set-ItemProperty -Path "IIS:\Sites\Default Web Site" -Name physicalPath -Value "C:\inetpub\wwwroot\Services\Recognition\Web"
+
+Write-Host "Updated Default Web Site physicalPath to 'C:\inetpub\wwwroot\Services\Recognition\Web'."
