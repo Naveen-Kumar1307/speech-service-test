@@ -15,7 +15,7 @@ RUN powershell -Command \
 # Map IIS physical path
 RUN powershell -Command \
     Import-Module WebAdministration; \
-    New-Item -Path "IIS:\Sites\Default Web Site\Services" -Type Directory; \
-    New-Item -Path "IIS:\Sites\Default Web Site\Services\Recognition" -Type Directory; \
-    New-Item -Path "IIS:\Sites\Default Web Site\Services\Recognition\Web" -Type Directory; \
+    New-Item -Path "C:\inetpub\wwwroot\Services" -ItemType Directory; \
+    New-Item -Path "C:\inetpub\wwwroot\Services\Recognition" -ItemType Directory; \
+    New-Item -Path "C:\inetpub\wwwroot\Services\Recognition\Web" -ItemType Directory; \
     Set-ItemProperty -Path "IIS:\Sites\Default Web Site" -Name physicalPath -Value "C:\inetpub\wwwroot\Services\Recognition\Web"
