@@ -15,4 +15,4 @@ RUN powershell -Command \
     Install-WindowsFeature -Name NET-WCF-Services45 -IncludeAllSubFeature
 
 # Map IIS physical path
-RUN powershell -ExecutionPolicy Bypass -File /scripts/configure-iis.ps1
+#RUN powershell -ExecutionPolicy Bypass -File /scripts/configure-iis.ps1
