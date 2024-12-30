@@ -1,9 +1,0 @@
-package.CreationDirectory	voice-mail-dynamic
-package.ID			NUANCE,EduSpeak2_RAPI(2.16.01.0001),1100,4326465
-package.NLDefined		FALSE
-package.NumGrammars		4
-package.GrammarName0		.SENTENCE
-package.GrammarName1		.SENTENCE1
-package.GrammarName2		.SENTENCE2
-package.GrammarName3		.SENTENCE3
-rec.pass1.gp.Method		unflattened

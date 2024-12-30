@@ -1,9 +1,0 @@
-# Scoring:
-Scoring.Tree		${NUANCE}/data/scoring/english-p16-na-m-980909.s990524/tree
-Scoring.Attributes	${NUANCE}/data/scoring/english-p16-na-m-980909.s990524/attr
-
-Scoring.Threshold	3
-Scoring.Smoothing	TRUE
-Scoring.TreeMapping	optimum
-Scoring.NumPhones	2.5
-

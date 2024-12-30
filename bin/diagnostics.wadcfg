@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DiagnosticMonitorConfiguration xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration"
+   configurationChangePollInterval="PT1M"
+   overallQuotaInMB="4096">
+
+  <DiagnosticInfrastructureLogs bufferQuotaInMB="0"
+                                    scheduledTransferLogLevelFilter="Verbose"
+                                    scheduledTransferPeriod="PT30M" />
+  
+  <Directories bufferQuotaInMB="0" scheduledTransferPeriod="PT30M">
+    <IISLogs container="wad-iis" directoryQuotaInMB="0" />
+  </Directories>
+  
+  <WindowsEventLog bufferQuotaInMB="0"
+   scheduledTransferLogLevelFilter="Verbose"
+   scheduledTransferPeriod="PT30M">
+    <DataSource name="Application!*" />
+    <DataSource name="System!*" />
+  </WindowsEventLog> 
+  
+</DiagnosticMonitorConfiguration>
