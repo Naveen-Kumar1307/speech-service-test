@@ -9,9 +9,8 @@ RUN powershell -Command \
     Import-Module ServerManager; \
     Add-WindowsFeature Web-Scripting-Tools; \
     Import-Module WebAdministration; \
-    Set-ItemProperty IIS:\AppPools\DefaultAppPool -Name enable32BitAppOnWin64 -Value true; \
-    Get-ItemProperty IIS:\AppPools\DefaultAppPool | Select-Object enable32BitAppOnWin64
-
+    Set-ItemProperty IIS:\AppPools\DefaultAppPool -Name enable32BitAppOnWin64 -Value true
+    
 CMD powershell -Command \
     Restart-Service -Name W3SVC; \
     Write-Host 'IIS Restarted'; \
