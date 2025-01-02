@@ -1,18 +1,20 @@
 FROM mcr.microsoft.com/windows/servercore/iis
-
-# Set the working directory
 WORKDIR /inetpub/wwwroot
-
-# Copy application files to the container
 COPY . .
-
-COPY configure-iis.ps1 /scripts/configure-iis.ps1
-
-# Install required Windows features
+COPY configuration.ps1 /scripts/configuration.ps1
 RUN powershell -Command \
     Install-WindowsFeature -Name Web-Asp-Net45 -IncludeAllSubFeature; \
     Install-WindowsFeature -Name NET-Framework-45-Core,NET-Framework-45-ASPNET -IncludeAllSubFeature; \
-    Install-WindowsFeature -Name NET-WCF-Services45 -IncludeAllSubFeature
+    Install-WindowsFeature -Name NET-WCF-Services45 -IncludeAllSubFeature; \
+    Import-Module ServerManager; \
+    Add-WindowsFeature Web-Scripting-Tools; \
+    Import-Module WebAdministration; \
+    Set-ItemProperty IIS:\AppPools\DefaultAppPool -Name enable32BitAppOnWin64 -Value true; \
+    Get-ItemProperty IIS:\AppPools\DefaultAppPool | Select-Object enable32BitAppOnWin64
 
-# Map IIS physical path
-#RUN powershell -ExecutionPolicy Bypass -File /scripts/configure-iis.ps1
+CMD powershell -Command \
+    Restart-Service -Name W3SVC; \
+    Write-Host 'IIS Restarted'; \
+    iisreset /restart; \
+    Write-Host 'IIS Reset Complete'; \
+    powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
