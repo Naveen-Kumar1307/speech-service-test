@@ -11,5 +11,5 @@ RUN powershell -Command \
     Import-Module WebAdministration; \
     Set-ItemProperty IIS:\AppPools\DefaultAppPool -Name enable32BitAppOnWin64 -Value true
 
-CMD powershell -Command \
+RUN powershell -Command \
     powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
