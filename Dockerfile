@@ -29,3 +29,6 @@ WORKDIR /inetpub/wwwroot
 # Run additional configuration script
 RUN powershell -Command \
     powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
+
+# Keep the container running
+CMD ["cmd.exe", "/k"]
