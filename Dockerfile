@@ -31,4 +31,4 @@ RUN powershell -Command \
     powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
 
 # Keep the container running
-CMD ["cmd.exe", "/k"]
+CMD ["powershell.exe", "-NoLogo", "-Command", "while ($true) { Start-Sleep -Seconds 3600 }"]
