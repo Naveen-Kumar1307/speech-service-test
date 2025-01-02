@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 # Set the working directory
+WORKDIR /inetpub/wwwroot
 
 # Copy application files to the container
 COPY . .
@@ -23,8 +24,6 @@ RUN powershell -Command \
     Add-WindowsFeature Web-Scripting-Tools; \
     Import-Module WebAdministration; \
     Get-ChildItem IIS:\AppPools ^| ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }
-
-WORKDIR /inetpub/wwwroot
 
 # Run additional configuration script
 RUN powershell -Command \
