@@ -22,7 +22,7 @@ RUN powershell -Command \
     Import-Module ServerManager; \
     Add-WindowsFeature Web-Scripting-Tools; \
     Import-Module WebAdministration; \
-    Get-ChildItem IIS:\AppPools | ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }
+    Get-ChildItem IIS:\AppPools ^| ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }
 
 CMD powershell -Command \
     Get-ChildItem IIS:\AppPools | ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }; \
