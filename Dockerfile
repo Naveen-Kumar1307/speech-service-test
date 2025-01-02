@@ -10,10 +10,6 @@ RUN powershell -Command \
     Add-WindowsFeature Web-Scripting-Tools; \
     Import-Module WebAdministration; \
     Set-ItemProperty IIS:\AppPools\DefaultAppPool -Name enable32BitAppOnWin64 -Value true
-    
+
 CMD powershell -Command \
-    Restart-Service -Name W3SVC; \
-    Write-Host 'IIS Restarted'; \
-    iisreset /restart; \
-    Write-Host 'IIS Reset Complete'; \
     powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
