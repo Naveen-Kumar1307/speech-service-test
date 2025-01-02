@@ -9,7 +9,7 @@ COPY . .
 # Copy PowerShell configuration script
 COPY configuration.ps1 /scripts/configuration.ps1
 
-# Install required Windows features (aligned with File A)
+# Install required Windows features
 RUN powershell -Command \
     Install-WindowsFeature -Name Web-Asp-Net45 -IncludeAllSubFeature; \
     Install-WindowsFeature -Name NET-Framework-45-Core,NET-Framework-45-ASPNET -IncludeAllSubFeature; \
@@ -22,7 +22,7 @@ RUN powershell -Command \
     Import-Module ServerManager; \
     Add-WindowsFeature Web-Scripting-Tools; \
     Import-Module WebAdministration; \
-    Set-ItemProperty IIS:\AppPools\DefaultAppPool -Name enable32BitAppOnWin64 -Value true
+    Get-ChildItem IIS:\AppPools | ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }
 
 # Run additional configuration script
 RUN powershell -Command \
