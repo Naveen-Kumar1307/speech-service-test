@@ -24,6 +24,11 @@ RUN powershell -Command \
     Import-Module WebAdministration; \
     Get-ChildItem IIS:\AppPools | ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }
 
+CMD powershell -Command \
+    Get-ChildItem IIS:\AppPools | ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }; \
+    iisreset /restart; \
+    Wait-Event
+
 # Run additional configuration script
 RUN powershell -Command \
     powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
