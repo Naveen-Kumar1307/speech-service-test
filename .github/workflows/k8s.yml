@@ -9,7 +9,7 @@ jobs:
   build-and-push:
     runs-on: windows-2022
     env:
-      IMAGE_NAME: parthibanlearnship/speech-service
+      IMAGE_NAME: gedevops/speech-service
 
     steps:
     - name: Checkout code
@@ -18,8 +18,8 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-        password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+        username: lsdevops
+        password: Vwu2507mmoY7
 
     - name: Build Docker image
       run: |
@@ -27,4 +27,4 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push ${{ env.IMAGE_NAME }}:${{ github.run_number }}
+        docker push ${{ env.IMAGE_NAME }}:golden-imagev1
