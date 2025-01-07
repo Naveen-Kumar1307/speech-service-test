@@ -23,8 +23,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ env.IMAGE_NAME }}:testv2 --platform windows/amd64 .
+        docker build -t ${{ env.IMAGE_NAME }}:testv3 --platform windows/amd64 .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push ${{ env.IMAGE_NAME }}:testv2
+        docker push ${{ env.IMAGE_NAME }}:testv3
