@@ -2,13 +2,13 @@
 FROM mcr.microsoft.com/windows/server:ltsc2022
 
 # Set the working directory
-#WORKDIR /inetpub/wwwroot
+WORKDIR /inetpub/wwwroot
 
 # Copy application files to the container
-#COPY . .
+COPY . .
 
 # Copy PowerShell configuration script
-#COPY configuration.ps1 /scripts/configuration.ps1
+COPY configuration.ps1 /scripts/configuration.ps1
 
 # Install required Windows features
 RUN powershell -Command \
@@ -27,8 +27,8 @@ RUN powershell -Command \
     Get-ChildItem IIS:\AppPools ^| ForEach-Object { Set-ItemProperty IIS:\AppPools\$($_.Name) -Name enable32BitAppOnWin64 -Value true }
 
 # Run additional configuration script
-#RUN powershell -Command \
-    #powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
+RUN powershell -Command \
+    powershell -ExecutionPolicy Bypass -File /scripts/configuration.ps1
 
 # Keep the container running
-#CMD ["powershell.exe", "-NoLogo", "-Command", "while ($true) { Start-Sleep -Seconds 3600 }"]
+CMD ["powershell.exe", "-NoLogo", "-Command", "while ($true) { Start-Sleep -Seconds 3600 }"]
